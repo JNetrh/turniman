@@ -1,0 +1,10 @@
+.idea/*
+
+vendor/*
+www/node_modules
+log/*
+temp/*
+!.gitignore
+!.htaccess
+!web.config
+www/config.ini

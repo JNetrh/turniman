@@ -1,0 +1,76 @@
+parameters:
+
+
+#mail:
+#    smtp: true # zapne SmtpMailer místo SendmailMailer
+#    host: smtp-163159.m59.wedos.net
+#    username: noreply@4fis.cz
+#    password: Gd!3N95@e
+#    port: 25
+
+
+
+doctrine:
+    user: @App\Model\DbFactory::username
+    password: @App\Model\DbFactory::password
+    dbname: @App\Model\DbFactory::dbname
+    host: @App\Model\DbFactory::host
+    metadata:
+        App: %appDir%
+
+
+extensions:
+#        - WebChemistry\Forms\Controls\DI\MultiplierExtension
+        console: Kdyby\Console\DI\ConsoleExtension
+        events: Kdyby\Events\DI\EventsExtension
+        annotations: Kdyby\Annotations\DI\AnnotationsExtension
+        doctrine: Kdyby\Doctrine\DI\OrmExtension
+
+#database:
+#    dsn: 'mysql:host=localhost;dbname=d950521_turniman'
+#    user: jakub
+#    password: 1234
+
+application:
+	errorPresenter: App\FrontModule\Presenters\Error
+	mapping:
+		*: App\*Module\Presenters\*Presenter
+
+
+session:
+	expiration: 14 days
+
+
+
+services:
+	# Managers
+#	- App\Model\MyService
+
+	- App\Model\DbFactory
+#	- App\Model\Entities\NewsRepo
+#	- App\Model\Entities\Tag
+#	- App\Model\Entities\User
+	- App\Model\Services\UserService
+	- App\Model\Services\LanguageService
+	- App\Model\Services\MutationService
+#	- App\Model\Services\MenuService
+#	- App\Model\Services\BlockService
+#	- App\Model\Services\JobsService
+#	- App\Model\Services\RequirementService
+#	- App\Model\Services\GaleryService
+#	- App\Model\Services\ImageService
+	authenticator: App\Model\Authenticator
+	authorizatorFactory: App\Model\AuthorizatorFactory
+	authorizator: @authorizatorFactory::create
+
+	- App\Router\RouterFactory
+	router: @App\Router\RouterFactory::createRouter
+
+
+constants:
+    UPLOAD_DIR: ./
+
+
+
+
+

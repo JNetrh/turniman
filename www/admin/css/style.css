@@ -1,0 +1,401 @@
+/* CSS Document */
+/*----------------------------------------------------------------------------*/
+/*FONTY: */
+
+@import url('https://netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.css');
+
+@font-face {
+    font-family: 'myr_pro_bold';
+    src: url('../font/myr_pro_bold.eot');
+    src: url('../font/myr_pro_bold.eot?#iefix') format('embedded-opentype'),
+         url('../font/myr_pro_bold.woff2') format('woff2'),
+         url('../font/myr_pro_bold.woff') format('woff'),
+         url('../font/myr_pro_bold.ttf') format('truetype'),
+         url('../font/myr_pro_bold.svg#webfontregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'myr_pro_bold_italic';
+    src: url('../font/myr_pro_bold_italic.eot');
+    src: url('../font/myr_pro_bold_italic.eot?#iefix') format('embedded-opentype'),
+         url('../font/myr_pro_bold_italic.woff2') format('woff2'),
+         url('../font/myr_pro_bold_italic.woff') format('woff'),
+         url('../font/myr_pro_bold_italic.ttf') format('truetype'),
+         url('../font/myr_pro_bold_italic.svg#webfontregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'myr_pro_cond_italic';
+    src: url('../font/myr_pro_cond_italic.eot');
+    src: url('../font/myr_pro_cond_italic.eot?#iefix') format('embedded-opentype'),
+         url('../font/myr_pro_cond_italic.woff2') format('woff2'),
+         url('../font/myr_pro_cond_italic.woff') format('woff'),
+         url('../font/myr_pro_cond_italic.ttf') format('truetype'),
+         url('../font/myr_pro_cond_italic.svg#webfontregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'myr_pro_regular';
+    src: url('../font/myr_pro_regular.eot');
+    src: url('../font/myr_pro_regular.eot?#iefix') format('embedded-opentype'),
+         url('../font/myr_pro_regular.woff2') format('woff2'),
+         url('../font/myr_pro_regular.woff') format('woff'),
+         url('../font/myr_pro_regular.ttf') format('truetype'),
+         url('../font/myr_pro_regular.svg#webfontregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/*----------------------------------------------------------------------------*/
+/* DEKLARACE FONTŮ: */
+body, p, ul, ol, ul li, ol li, table, table td, div, a, a:hover, a:visited, input, textarea, select 
+{
+  font-family: 'myr_pro_regular', 'Lucida Sans Unicode', sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  color: #000;
+}
+h1, h2, h3, h4, h5, h6, em, button
+{
+  font-family: 'myr_pro_bold', 'Lucida Sans Unicode', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+h1, h2, h3, h4, h5, h6
+{
+  text-align: center;
+  color: #26547C;
+}
+
+pre
+  {
+    font-family: inherit;
+    font-size: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+  }
+
+/*----------------------------------------------------------------------------*/
+/* BODY: */
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    overflow: hidden;  /*makes the body non-scrollable (we will add scrolling to the sidebar and main content containers)*/
+    margin: 0px;  /*removes default style*/
+    display: flex;  /*enables flex content for its children*/
+    box-sizing: border-box;
+}
+
+/*----------------------------------------------------------------------------*/
+/* DIVY: */
+div.divFlashMessage {
+    position: absolute;
+    top: -70px;
+    /*top: 0px;*/
+    left: 50%;
+    margin-left: -200px;
+    margin-top: 15px;
+    width: 400px;
+    padding: 0 15px 15px 15px;
+    background-color: #26547C;
+    z-index: 3003;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+div.layoutColumn {
+    height: 100%;  /*allows both columns to span the full height of the browser window*/
+    display: flex;
+    flex-direction: column;  /*places the left and right headers above the bottom content*/
+}
+
+div.layoutBottom {
+    flex-grow: 1;  /*ensures that the container will take up the full height of the parent container*/
+    overflow-y: auto;  /*adds scroll to this container*/
+    padding: 20px;
+}
+
+div.layoutHeaderLeft {
+    flex-shink: 0;
+    background-color: #26547C;
+    color: #FCFCFC;
+    padding: 20px;
+}
+
+div.layoutHeaderRight {
+    display: inline-flex;
+    flex-shrink: 0;
+    background-color: #26547C;
+    color: #FCFCFC;
+    width: 100%;
+}
+
+div.bottom {
+    height: 100%;
+    padding: 25px 0 0 25px;
+    overflow-y: auto;
+}
+/*----------------------------------------------------------------------------*/
+/* TEXT: */
+h1, h2, h3, h4, h5, h6
+  {
+    padding: 0;
+    text-transform: uppercase;
+  }
+h2, h3, h4, h5, h6
+  {
+    margin: 40px 0 20px 0;
+  }
+h1 {
+    font-size: 30px;
+    margin: 20px 0 0 0;
+    clear: both;
+    text-align: left;
+}
+
+h1.h1PageTop {
+    margin: 20px 0 0 0;
+    color: #26547C;
+    font-family: 'myr_pro_bold', 'Lucida Sans Unicode', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+}
+h2 {
+    font-size: 25px;
+}
+h3 {
+    font-size: 20px;
+}
+h4 {
+    font-size: 18px;
+}
+
+h5 {
+    font-size: 16px;
+}
+  
+
+p {
+    padding: 0;
+    margin: 0 0 20px 0;
+    text-align: left;
+}
+
+/*----------------------------------------------------------------------------*/
+/* OBRÁZKY: */
+img{
+    border: none;
+}
+/*----------------------------------------------------------------------------*/
+/*IMAGES: */
+a img /*----NEMAZAT----*/
+{
+    border: none;
+    text-decoration: none;
+    font-size: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+    color: inherit;
+    opacity: 1.0;
+    filter: alpha(opacity=100);
+    display: inline-block;
+}
+a:hover img /*----NEMAZAT----*/
+{
+    border: none;
+    text-decoration: none;
+    font-size: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+    color: inherit;
+    opacity: 0.7;
+    filter: alpha(opacity=70);
+}
+/*----------------------------------------------------------------------------*/
+/* ODKAZY: */
+a {
+    border: none;
+    text-decoration: none;
+    color: #26547C;
+}
+a:hover {
+    text-decoration: none; 
+}
+
+a.logOut {
+    font-family: 'myr_pro_bold', 'sans-serif';
+    color: #FCFCFC;
+    display: block;
+    padding: 10px 10px 10px 10px;
+    margin: 10px 30px 5px auto;
+}
+a.logOut:hover {
+    color: #26547C;
+}
+
+a.aMenu {
+    font-family: 'myr_pro_bold', 'sans-serif';
+    color: #FCFCFC;
+    padding: 20px 10px 10px 10px;
+    display: block;
+}
+a.aMenu:hover, a.aMenu:focus {
+    color: #FFD166;
+    border-color: #FCFCFC;
+    background-color: #FCFCFC;
+    text-decoration: none;
+}
+a.aMenuActive {
+    color: #FFD166;
+    border-color: #FCFCFC;
+    background-color: #FCFCFC;
+}
+a.aMenuActive:hover {
+    color: #FCFCFC;
+}
+/*----------------------------------------------------------------------------*/
+/* TABULKY: */
+table {
+    margin: 0;
+    padding: 0;
+    border-collapse: collapse;
+    border: none;
+}
+table td {
+    margin: 0;
+    padding: 0;
+    border-collapse: collapse;
+    border: none;
+    text-align: left;
+    vertical-align: middle;
+}
+
+/*----------------------------------------------------------------------------*/
+/* FRAMY: */
+
+iframe {
+    border: none;
+    width: 260px;
+    height: 147px;
+  }
+
+
+/*----------------------------------------------------------------------------*/
+/* SEZNAMY: */
+
+ul {
+    padding: 15px 0 0 30px;
+    margin: 0;
+}
+ul li {
+    margin: 0;
+    padding: 0;
+    list-style-type: disc;
+}
+
+ul.ulFlashMessage {
+    padding: 0;
+    list-style-type: none;
+}
+ul.ulFlashMessage li {
+    list-style-type: none;
+    padding: 15px 0 0 0;
+    color: #FCFCFC;
+    font-size: 16px;
+}
+
+ul.layoutMenu {
+    display: inline-flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+ul.layoutMenu li{
+    list-style-type: none;
+    border-bottom: 5px solid #FFD166;
+    margin: 0 10px;
+}
+
+/*----------------------------------------------------------------------------*/
+/* INPUTY: */
+
+
+input {
+    border: 0;
+    color: inherit;
+    font: inherit;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    -webkit-transition: background-color .3s;
+    transition: background-color .3s;
+}
+/*----------------------------------------------------------------------------*/
+/* FORMULARE: */
+
+
+
+
+/*----------------------------------------------------------------------------*/
+/* COLORS */
+.blue {
+    color: #26547C;
+}
+.yellow {
+    color: #FFD166;
+}
+.green {
+    color: #06D6A0;
+}
+.white {
+    color: #FCFCFC;
+}
+.red {
+    color: #EF4A58;
+}
+.black {
+    color: #171717;
+}
+
+/*----------------------------------------------------------------------------*/
+/* FORM VALIDACE */
+form.error {
+  color: #F16667;
+}
+
+/*----------------------------------------------------------------------------*/
+/* LAYOUT */
+
+#layoutLeft {
+    flex-shrink: 0;  /*makes sure that content is not cut off in a smaller browser window*/
+    background-color: #26547C;
+    width: 250px;
+    flex: 0 0 250px;
+}
+
+#layoutRight {
+    background-color: #FCFCFC;
+    width: 100%
+}

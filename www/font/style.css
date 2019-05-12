@@ -1,0 +1,79 @@
+/*FONTY: */
+
+@font-face {
+    font-family: 'National-Semibold';
+    src: url('National-Semibold.eot');
+    src: url('National-Semibold.eot?#iefix') format('embedded-opentype'),
+    url('National-Semibold.svg#National-Semibold') format('svg'),
+    url('National-Semibold.woff') format('woff'),
+    url('../font/National-Semibold.ttf') format('truetype'),
+    url('National-Semibold.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'National-Regular';
+    src: url('National-Regular.eot');
+    src: url('National-Regular.eot?#iefix') format('embedded-opentype'),
+    url('National-Regular.svg#National-Regular') format('svg'),
+    url('National-Regular.woff') format('woff'),
+    url('../font/National-Regular.ttf') format('truetype'),
+    url('National-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'National-Medium';
+    src: url('National-Medium.eot');
+    src: url('National-Medium.eot?#iefix') format('embedded-opentype'),
+    url('National-Medium.svg#National-Medium') format('svg'),
+    url('National-Medium.woff') format('woff'),
+    url('../font/National-Medium.ttf') format('truetype'),
+    url('National-Medium.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'National-LightItalic';
+    src: url('National-LightItalic.eot');
+    src: url('National-LightItalic.eot?#iefix') format('embedded-opentype'),
+    url('National-LightItalic.svg#National-LightItalic') format('svg'),
+    url('National-LightItalic.woff') format('woff'),
+    url('../font/National-LightItalic.ttf') format('truetype'),
+    url('National-LightItalic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'National-Light';
+    src: url('National-Light.eot');
+    src: url('National-Light.eot?#iefix') format('embedded-opentype'),
+    url('National-Light.svg#National-Light') format('svg'),
+    url('National-Light.woff') format('woff'),
+    url('../font/National-Light.ttf') format('truetype'),
+    url('National-Light.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'National-Extrabold';
+    src: url('National-Extrabold.eot');
+    src: url('National-Extrabold.eot?#iefix') format('embedded-opentype'),
+    url('National-Extrabold.svg#National-Extrabold') format('svg'),
+    url('National-Extrabold.woff') format('woff'),
+    url('../font/National-Extrabold.ttf') format('truetype'),
+    url('National-Extrabold.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'National-Bold';
+    src: url('National-Bold.eot');
+    src: url('National-Bold.eot?#iefix') format('embedded-opentype'),
+    url('National-Bold.svg#National-Bold') format('svg'),
+    url('National-Bold.woff') format('woff'),
+    url('../font/National-Bold.ttf') format('truetype'),
+    url('National-Bold.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}

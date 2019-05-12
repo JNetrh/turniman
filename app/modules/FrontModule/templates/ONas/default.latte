@@ -1,0 +1,42 @@
+{block description}Informace o společnosti Turniman Advisory s.r.o., která zastřešuje skupinu zkušených manažerů s dlouholetou praxí ve finančním a krizovém řízení nebo poradenství{/block}
+{block keywords}Turniman, manžer, finanční, krizové, řízení, poradenství{/block}
+{block title}{/block}
+{block menuSluzby}{$data->menu[0]}{/block}
+{block menuONas}{$data->menu[1]}{/block}
+{block menuKontakt}{$data->menu[2]}{/block}
+{block content}
+
+{/block}
+
+{block style}
+    <style type="text/css">
+        a.aMenu, a.aMenuActive {
+            color: #0d0d0d;
+        }
+        em.emLogo a, em.emLogo a:hover {
+            color: #FD1A1A;
+        }
+    </style>
+{/block}
+
+{block script}
+
+
+    <script type="text/javascript">
+        drzAktivni('onas')
+    </script>
+{/block}
+
+{block gAnalytics}
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135749419-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-135749419-1');
+    </script>
+{/block}

@@ -1,0 +1,56 @@
+{
+  "lang": "cz",
+  "langLong": "čeština",
+  "menu": ["Naše služby", "O nás", "Kontakt"],
+  "pages": {
+    "homepage": {
+      "code": "homepage",
+      "welcomeHeading": "Firma s dlouholetou praxí ve finančním a krizovém řízení nebo poradenství",
+      "welcomeSubHeading": "Nabízíme odborné služby pro vaši organizaci",
+      "welcomeLink": "Více o našich službách",
+      "aboutHeading": "O nás",
+      "aboutSubHeading": "Ing. Martin Ježek, FCCA",
+      "aboutDescription": "Zakladatel Martin se po přečtení životopisu Lee laccosy rozhodl, že jednou bude krizovým manažerem. Dnes má již dvacet let praxe ve finančním řízení a několik úspěšně zvládnutých interim management projektů.",
+      "ourServicesHeading": "Naše služby",
+      "redBlocks": [
+        {
+          "heading": "Interim management",
+          "items": ["první položka", "druhá položka"]
+        },
+        {
+          "heading": "Odborné poradenství",
+          "items": ["první položka", "druhá položka"]
+        }
+      ]
+    },
+    "service_1": {
+      "code": "interim",
+      "welcomeHeading": "Interim management",
+      "blocks": [
+        {
+          "heading": "Substituční interim management",
+          "items": [
+            {
+              "subHeading": "cíl",
+              "description": "zajistit běžný chod firmy, dokud nebude nalezen a nenastoupí nový manažer"
+            }
+          ]
+        }
+      ]
+    }
+    },
+  "contact": {
+    "heading": "kontakt",
+    "address": ["nazev adresy", "adresa", "castPrahy + psč"],
+    "email": "Martin.Jezek@trunima.eu",
+    "dataBox": "Datová schránka: z48s8i",
+    "ico": "CZ885478",
+    "formItems": {
+      "name": "jméno",
+      "email": "email",
+      "subject": "predmet",
+      "text": "zpráva"
+    },
+    "sendButton": "Odeslat formulář"
+  }
+}

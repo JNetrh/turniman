@@ -1,0 +1,109 @@
+
+
+span.hidden_ {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+div.signFormContainer {
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+div.login-item {
+    color: #FCFCFC;
+    padding:25px 25px 0;
+    margin: 20px 20px 0;
+    border-radius: 3px;
+}
+
+h2.h2SignIn {
+    font-size:20px;
+    text-align: center;
+    padding: 20px 20px 0;
+    margin:0;
+}
+
+
+.user:before {
+    content: '\f007';
+    font: 14px fontawesome;
+    color: #FCFCFC;
+}
+
+.lock:before {
+    content: '\f023';
+    font: 14px fontawesome;
+    color: #FCFCFC;
+}
+
+.form-login {
+    width:450px;
+}
+
+.form input[type="password"], .form input[type="email"] {
+    width: 100%;
+}
+
+.form-login label,
+.form-login input[type="email"],
+.form-login input[type="password"] {
+    border-radius: 0.25rem;
+    padding: 1rem;
+    color: #171717;
+}
+
+.form-login label {
+    background-color: #26547C;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+}
+
+.form-login input[type="email"], .form-login input[type="password"] {
+    background-color: #FCFCFC;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    border: 1px solid #26547C;
+}
+.form-login input[type="email"]:focus, .form-login input[type="email"]:hover, .form-login input[type="password"]:focus, .form-login input[type="password"]:hover {
+    background-color: #FCFCFC;
+}
+.form-field {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+
+/*----------------------------------------------------------------------------*/
+/* BUTTON */
+button.signInButton {
+    font-size: 20px;
+    width: 100%;
+    background-color: #26547C;
+    color: #FCFCFC;
+    text-align: center;
+    border-radius: 0.25rem;
+    border: 0;
+    padding: 0.75rem;
+    cursor: pointer;
+}
+button.signInButton:hover, button.signInButton:focus {
+    background-color: #FCFCFC;
+    color: #26547C;
+    border: 1px solid #26547C;
+    margin-top: -1px;
+    margin-bottom: -1px;
+}

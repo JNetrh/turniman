@@ -1,0 +1,34 @@
+{block description}{/block}
+{block title}{/block}
+{block keywords}{/block}
+{block menuSluzby}{$data->menu[0]}{/block}
+{block menuONas}{$data->menu[1]}{/block}
+{block menuKontakt}{$data->menu[2]}{/block}
+{block content}
+    <div class="divCover">
+        <img class="imgCover" src="{$basePath}/img/cover.jpg" alt="cover" />
+        <div class="divCoverText">
+            <h1 class="h1Cover">Odborné poradenství</h1>
+        </div>
+    </div>
+{/block}
+
+{block script}
+    <script type="text/javascript">
+        drzAktivni('sluzby');
+    </script>
+{/block}
+
+{block gAnalytics}
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135749419-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-135749419-1');
+    </script>
+{/block}
