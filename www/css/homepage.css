@@ -124,6 +124,14 @@ ul.ulSluzba li {
     p.trimWidth {
         max-width: 100%;
     }
+    div.divSluzby {
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    div.divSluzba {
+        width: 85%;
+        margin: 0 auto 3rem auto;
+    }
 
 }
 
@@ -138,5 +146,13 @@ ul.ulSluzba li {
     }
     p.trimWidth {
         max-width: 100%;
+    }
+    div.divSluzby {
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    div.divSluzba {
+        width: 85%;
+        margin: 0 auto 3rem auto;
     }
 }

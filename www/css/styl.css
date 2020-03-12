@@ -410,7 +410,12 @@ a:hover {
     text-decoration: none;
 }
 
+a.aLogo {
+    margin: 0;
+}
+
 a.aMenu, a.aMenuActive {
+    margin: 0;
     font-family: 'National_Bold', 'Lucida Sans Unicode', sans-serif !important;
     display: block;
     color: #E8E7E8;
@@ -487,7 +492,8 @@ li {
 }
 
 ul.ulMenu {
-    display: inline-flex;
+    display: flex;
+    align-items: center;
     padding: 0;
     margin: 0;
 }
@@ -520,6 +526,22 @@ ul.ulMenu li ul.ulLang li {
     padding: 0 1em 2em 0;
     display: flex;
     flex-direction: column;
+}
+
+div.divBlockForm {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+div.divFormLeft {
+    width: 40%;
+    margin: 0 auto;
+}
+
+div.divFormRight {
+    width: 60%;
+    margin: 0 auto;
 }
 
 div.divFormField label {
@@ -696,6 +718,19 @@ nav.navigation {
     img.imgCover {
         width: 135%;
     }
+    img.imgLogo {
+        height: 60px;
+    }
+    a.aMenu {
+        padding: 5px;
+    }
+    div.divFormLeft, div.divFormRight {
+        width: 100%;
+        margin-bottom: 10rem;
+    }
+    div.divBlockForm {
+        flex-direction: column;
+    }
 
 }
 
@@ -708,6 +743,19 @@ nav.navigation {
     img.imgCover {
         width: 150%;
     }
+    img.imgLogo {
+        height: 40px;
+    }
+    a.aMenu {
+        padding: 5px;
+    }
+    div.divFormLeft, div.divFormRight {
+        width: 100%;
+        margin-bottom: 10rem;
+    }
+    div.divBlockForm {
+        flex-direction: column;
+    }
 
 }
 
@@ -719,5 +767,18 @@ nav.navigation {
     }
     img.imgCover {
         width: 200%;
+    }
+    img.imgLogo {
+        height: 40px;
+    }
+    a.aMenu {
+        padding: 5px 0;
+    }
+    div.divFormLeft, div.divFormRight {
+        width: 100%;
+        margin-bottom: 10rem;
+    }
+    div.divBlockForm {
+        flex-direction: column;
     }
 }

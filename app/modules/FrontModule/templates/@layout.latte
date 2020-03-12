@@ -60,7 +60,7 @@
 
     <nav class="navigation">
         <div class="divNav">
-            <a n:href="Homepage: ">
+            <a class="aLogo" n:href="Homepage: ">
                 <img class="imgLogo" src="{$basePath}/img/logo.png" alt="logo Turniman" />
             </a>
             <div class="divMenu">
@@ -98,55 +98,57 @@
         {include content}
 
         <div id="blockKontakt" class="divBlock">
-            <div class="divBlockLeft_4">
-                <h2 class="h2Kontakt"  lang="{$lang}">{$data->contact_heading}</h2>
-                <p>
-                    {$data->contact_address_name} <br />
-                    {$data->contact_address_address_1_row1} <br />
-                    {$data->contact_address_address_1_row2}
-                </p>
-                <p>
-                    {$data->contact_address_address_2_row1}
-                </p>
-                <p lang="{$lang}">
-                    {$data->contact_email}
-                </p>
-                <p  lang="{$lang}">
-                    {$data->contact_dic}
-                </p>
-                <p  lang="{$lang}">
-                    {$data->contact_dataMail}
-                </p>
-            </div>
-            <div class="divBlockRight_6">
-                <div class="divContactForm">
-                    {form contactForm class => 'form formContact'}
-                        <div class="divContactRow">
-                            <div class="divFormField">
-                                <label class="labelInput" for="contact-name">Name</label>
-                                {input name class => 'inputContactForm'}
+            <div class="divBlockForm">
+                <div class="divFormLeft">
+                    <h2 class="h2Kontakt"  lang="{$lang}">{$data->contact_heading}</h2>
+                    <p>
+                        {$data->contact_address_name} <br />
+                        {$data->contact_address_address_1_row1} <br />
+                        {$data->contact_address_address_1_row2}
+                    </p>
+                    <p>
+                        {$data->contact_address_address_2_row1}
+                    </p>
+                    <p lang="{$lang}">
+                        {$data->contact_email}
+                    </p>
+                    <p  lang="{$lang}">
+                        {$data->contact_dic}
+                    </p>
+                    <p  lang="{$lang}">
+                        {$data->contact_dataMail}
+                    </p>
+                </div>
+                <div class="divFormRight">
+                    <div class="divContactForm">
+                        {form contactForm class => 'form formContact'}
+                            <div class="divContactRow">
+                                <div class="divFormField">
+                                    <label class="labelInput" for="contact-name">Name</label>
+                                    {input name class => 'inputContactForm'}
+                                </div>
+                                <div class="divFormField">
+                                    <label class="labelInput" for="contact-email">Email</label>
+                                    {input email class => 'inputContactForm'}
+                                </div>
                             </div>
-                            <div class="divFormField">
-                                <label class="labelInput" for="contact-email">Email</label>
-                                {input email class => 'inputContactForm'}
+                            <div class="divContactRow">
+                                <div class="divFormField">
+                                    <label class="labelInput" for="contact-subject">Subject</label>
+                                    {input subject class => 'inputContactForm'}
+                                </div>
                             </div>
-                        </div>
-                        <div class="divContactRow">
-                            <div class="divFormField">
-                                <label class="labelInput" for="contact-subject">Subject</label>
-                                {input subject class => 'inputContactForm'}
+                            <div class="divContactRow">
+                                <div class="divFormField">
+                                    <label class="labelInput" for="contact-message">Message</label>
+                                    {input message class => 'inputContactForm'}
+                                </div>
                             </div>
-                        </div>
-                        <div class="divContactRow">
-                            <div class="divFormField">
-                                <label class="labelInput" for="contact-message">Message</label>
-                                {input message class => 'inputContactForm'}
+                            <div class="divContactRow">
+                                <p class="pMore"><button class="buttonForm" type="submit">{$data->contact_sendButton}</button> </p>
                             </div>
-                        </div>
-                        <div class="divContactRow">
-                            <p class="pMore"><button class="buttonForm" type="submit">{$data->contact_sendButton}</button> </p>
-                        </div>
-                    {/form}
+                        {/form}
+                    </div>
                 </div>
             </div>
         </div>
