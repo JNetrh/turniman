@@ -1,7 +1,7 @@
 <div class="divCover">
     <img class="imgCover" src="{$basePath}/img/cover.jpg" alt="cover" />
     <div class="divCoverText">
-        <h1 class="h1Cover" lang="{$lang}">{$data->{$serviceName}->welcomeHeading}</h1>
+        <h1 class="h1Cover" lang="{$lang}">{$data->{$serviceName}->welcomeHeading|noescape}</h1>
     </div>
 </div>
 {foreach $data->{$serviceName}->blocks as $block}
@@ -11,7 +11,7 @@
     {if strlen($isHeading) > 0 || $i == 0}
         <div higherOrder="{$i}" class="divBlock">
             <div class="divBlockLeft_4">
-                <h2 class="h2TypSluzby" lang="{$lang}">{$service->blocks[$i]->heading}</h2>
+                <h2 class="h2TypSluzby" lang="{$lang}">{$service->blocks[$i]->heading|noescape}</h2>
             </div>
             <div class="divBlockRight_6">
                 {foreach $block->items as $items}
@@ -19,9 +19,9 @@
                     {var $content = $service->blocks[$i]->items[$position]->subHeading}
                     {if strlen($content) > 0 || $position == 0}
                         <div  order="{$position}" >
-                            <h3 class="h3TypSluzby" lang="{$lang}">{$data->{$serviceName}->blocks[$i]->items[$position]->subHeading}</h3>
+                            <h3 class="h3TypSluzby" lang="{$lang}">{$data->{$serviceName}->blocks[$i]->items[$position]->subHeading|noescape}</h3>
                             <p lang="{$lang}">
-                                {$service->blocks[$i]->items[$position]->description}
+                                {$service->blocks[$i]->items[$position]->description|noescape}
                             </p>
                         </div>
                     {/if}

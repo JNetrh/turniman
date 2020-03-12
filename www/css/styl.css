@@ -162,7 +162,7 @@ div {
 div.divNav {
     max-width: 1024px;
     margin: 0 auto;
-    padding: 2rem 0;
+    padding: 2rem 1rem;
     display: flex;
     /* flex-direction: column; */
     overflow: hidden;
@@ -661,8 +661,7 @@ td {
 nav.navigation {
     width: 100%;
     margin: 0;
-    padding: 0 1rem;
-    /*z-index: 1001;*/
+    padding: 0;
 }
 
 
