@@ -45,12 +45,14 @@ a.aPSluzby:last-child p {
 }
 
 div.divBlock_5 {
-    width: 50%;
+    width: 45%;
 }
 
 div.divWrapObout {
     display: flex;
+    justify-content: space-between;
     flex-direction: row;
+    width: 100%;
 }
 
 div.divSluzbyOuter {

@@ -25,7 +25,7 @@
                 <p className="trimWidth" lang="{$lang}">{$data->page_homepage_subjectsSubHeading|noescape}</p>
                 {var $arrLength = count($data->page_homepage_subjects)}
                 {var $half = $arrLength / 2}
-                <div style="display: flex;">
+                <div class="divWrapObout">
                     <div class="divBlock_5">
                         <ul class="ulSluzba">
                             <li n:for="$i = 0; $i < $half; $i++" >
