@@ -78,31 +78,32 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
      * @param $path
      * @param $data
      * @return array|mixed
+     * for now unnused functionality. Functional for previous lang.json file format
      */
-    public function findAndReplace ($obj, $path, $data) {
-        $objArr = json_decode($obj, true);
-        return $this->findAndReplaceAndDo($objArr, $path, $data);
-    }
-
-
-    public function findAndReplaceAndDo ($obj, $path, $data, $index = 0) {
-        if($index + 1 == sizeof($path)) {
-            if(!is_array($obj)) {
-                $obj = json_decode(json_encode($obj), true);
-            }
-           /* if(strlen(trim($data)) == 0) {
-                unset( $obj[$path[$index]]);
-            }*/
-            $obj[$path[$index]] = $data; // Key found, set a new value
-            return $obj;
-        }
-        if(!isset($obj[$path[$index]])) {
-            $obj[$path[$index]] = $obj[$path[$index] - 1]; // if the offset is not available, create a new one || e.g. when you are creating new service block item
-        }
-        $obj[$path[$index]] = $this->findAndReplaceAndDo($obj[$path[$index]], $path, $data, $index + 1);
-
-        return $obj;
-    }
+//    public function findAndReplace ($obj, $path, $data) {
+//        $objArr = json_decode($obj, true);
+//        return $this->findAndReplaceAndDo($objArr, $path, $data);
+//    }
+//
+//
+//    public function findAndReplaceAndDo ($obj, $path, $data, $index = 0) {
+//        if($index + 1 == sizeof($path)) {
+//            if(!is_array($obj)) {
+//                $obj = json_decode(json_encode($obj), true);
+//            }
+//           /* if(strlen(trim($data)) == 0) {
+//                unset( $obj[$path[$index]]);
+//            }*/
+//            $obj[$path[$index]] = $data; // Key found, set a new value
+//            return $obj;
+//        }
+//        if(!isset($obj[$path[$index]])) {
+//            $obj[$path[$index]] = $obj[$path[$index] - 1]; // if the offset is not available, create a new one || e.g. when you are creating new service block item
+//        }
+//        $obj[$path[$index]] = $this->findAndReplaceAndDo($obj[$path[$index]], $path, $data, $index + 1);
+//
+//        return $obj;
+//    }
 
 
 
@@ -121,19 +122,6 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
         return $form;
     }
 
-    protected function createComponentNewLangForm(){
-        $form = new Form;
-        $languages = $this->getLanguages();
-        $form->addRadioList('language','', $languages);
-        $form->addSubmit('send');
-
-        $this->template->newLangForm = $form;
-
-        $form->onSuccess[] = [$this, 'NewLangFormSucceeded'];
-
-        return $form;
-    }
-
 
     public function ContactFormSucceeded($form){
         $values = $form->getValues();//získání hodnot z formuláře
@@ -143,53 +131,7 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
         $this->redirect('Homepage:');
     }
 
-    public function NewLangFormSucceeded($form){
-        $langCodeListNames = ['cz' => 'Čeština', 'de' => 'Deutsch', 'en' => 'English', 'fr' => 'Français', 'it' => 'Italiano', 'ru' => 'Russkij', 'sk' => 'Slovenština', 'sp' => 'español']; // languages with available flags (www/img/flags/<countryCode>.png
-        $values = $form->getValues();//získání hodnot z formuláře
-        $isLanguage = $this->languageService->findByLang($values['language']);
 
-        if($isLanguage) {
-            $newLanguage = $isLanguage;
-        }
-        else {
-            $newLanguage = $this->languageService->newEntity();
-        }
-
-        $newLanguage->setCode($values['language']);
-        $newLanguage->setName($langCodeListNames[$values['language']]);
-        $newLanguage->setImg($values['language'].'.png');
-        $newLanguage->setPosition(0);
-        $newLanguage->setDisplay(1);
-
-        // UNCOMMENT
-        $this->languageService->saveEntity($newLanguage);
-
-        $languageTemplate = $this->mutationService->findByLang('xx');
-
-        $isAlreadyMutation = $this->mutationService->findByLang($values['language']);
-
-        if($isAlreadyMutation) {
-            $newMutation = $isAlreadyMutation;
-        }
-        else {
-            $newMutation = $this->mutationService->newEntity();
-            $newMutation->setContent($languageTemplate->getContent());
-            $addingLanguage = $this->languageService->findByLang($values['language']);
-//            bdump($addingLanguage,'$addingLanguage');
-//            bdump($addingLanguage->getId(),'$addingLanguage->getId()');
-            $newMutation->setLangId($addingLanguage->getId());
-        }
-
-        $newMutation->setDeprecated(0);
-
-//        bdump($newMutation,'$newMutation');
-
-
-        // UNCOMMENT
-        $this->mutationService->saveEntity($newMutation);
-
-        $this->redirect('Homepage:');
-    }
 
     /**
      * @return array of languages that has not a translation yet according to the Db
@@ -212,5 +154,6 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
     public function actionLogout() {
         $this->getUser()->logout();
         $this->redirect(":Front:Homepage:");
+        exit;
     }
 }

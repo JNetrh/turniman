@@ -1,39 +1,32 @@
 <div class="divCover">
     <img class="imgCover" src="{$basePath}/img/cover.jpg" alt="cover" />
     <div class="divCoverText">
-        <h1 class="h1Cover editableTextfield" path="{$helperFunctions->getPath($data, $serviceName)}/welcomeHeading" lang="{$lang}">{$data->pages->{$serviceName}->welcomeHeading}</h1>
+        <h1 class="h1Cover" lang="{$lang}">{$data->{$serviceName}->welcomeHeading}</h1>
     </div>
 </div>
-{foreach $data->pages->{$serviceName}->blocks as $block}
+{foreach $data->{$serviceName}->blocks as $block}
     {var $i = $iterator->counter -1}
-    {var $isHeading = $data->pages->{$serviceName}->blocks[$i]->heading}
-    {var $higherPath = $helperFunctions->getPath($data, $serviceName)."/blocks/".$i}
+    {var $service = $data->{$serviceName}}
+    {var $isHeading = $service->blocks[$i]->heading}
     {if strlen($isHeading) > 0 || $i == 0}
-        <div higherOrder="{$i}" higherPath="{$higherPath}" class="divBlock">
+        <div higherOrder="{$i}" class="divBlock">
             <div class="divBlockLeft_4">
-                <h2 class="h2TypSluzby editableTextfield" path="{$helperFunctions->getPath($data, $serviceName)}/blocks/{$i}/heading" lang="{$lang}">{$data->pages->{$serviceName}->blocks[$i]->heading}</h2>
+                <h2 class="h2TypSluzby" lang="{$lang}">{$service->blocks[$i]->heading}</h2>
             </div>
             <div class="divBlockRight_6">
                 {foreach $block->items as $items}
                     {var $position = $iterator->counter - 1}
-                    {var $path = $helperFunctions->getPath($data, $serviceName)."/blocks/".$i."/".items."/".$position}
-                    {var $content = $data->pages->{$serviceName}->blocks[$i]->items[$position]->subHeading}
+                    {var $content = $service->blocks[$i]->items[$position]->subHeading}
                     {if strlen($content) > 0 || $position == 0}
-                        <div  order="{$position}" path="{$path}">
-                            <h3 class="h3TypSluzby editableTextfield" path="{$helperFunctions->getPath($data, $serviceName)}/blocks/{$i}/items/{$position}/subHeading" lang="{$lang}">{$data->pages->{$serviceName}->blocks[$i]->items[$position]->subHeading}</h3>
-                            <p class="editableTextfield" path="{$helperFunctions->getPath($data, $serviceName)}/blocks/{$i}/items/{$position}/description" lang="{$lang}">
-                                {$data->pages->{$serviceName}->blocks[$i]->items[$position]->description}
+                        <div  order="{$position}" >
+                            <h3 class="h3TypSluzby" lang="{$lang}">{$data->{$serviceName}->blocks[$i]->items[$position]->subHeading}</h3>
+                            <p lang="{$lang}">
+                                {$service->blocks[$i]->items[$position]->description}
                             </p>
                         </div>
                     {/if}
                 {/foreach}
-                {if $user->isLoggedIn()}
-                    <button cardId="addNewServiceBlockItem_{$position}" class="addNewServiceBlockItem button-success">Add item</button>
-                {/if}
             </div>
         </div>
     {/if}
 {/foreach}
-{if $user->isLoggedIn()}
-    <button cardId="addNewServiceBlock" class="addNewServiceBlock button-success">Add service block</button>
-{/if}

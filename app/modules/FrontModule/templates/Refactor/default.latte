@@ -7,45 +7,39 @@
 {block content}
     <div class="divBlock">
         <div class="divIntroText">
-            <h1 class="h1Intro editableTextfield" path="{$helperFunctions->getPath($data, 'welcomeHeading')}" lang="{$lang}">{$data->pages->homepage->welcomeHeading}</h1>
-            {*Firma s dlouholetou praxí<br />*}
-            {*ve <strong>finančním a krizovém řízení</strong> nebo poradenství*}
-            <p class="editableTextfield"  path="{$helperFunctions->getPath($data, 'welcomeSubHeading')}" lang="{$lang}">{$data->pages->homepage->welcomeSubHeading}</p>
-            <p class="pMore"><a n:href="Sluzby: " class="editableTextfield"  path="{$helperFunctions->getPath($data, 'welcomeLink')}" lang="{$lang}">{$data->pages->homepage->welcomeLink}</a></p>
+            <h1 class="h1Intro " lang="{$lang}">{$data->page_homepage_welcomeHeading}</h1>
+            <p lang="{$lang}">{$data->page_homepage_welcomeSubHeading}</p>
+            <p class="pMore"><a id="sluzbyButton" href="#" lang="{$lang}">{$data->page_homepage_welcomeLink}</a></p>
         </div>
     </div>
     <div class="divBlock">
         <div class="divBlockLeft_4">
-            <h2 class="editableTextfield" path="{$helperFunctions->getPath($data, 'aboutHeading')}" lang="{$lang}">{$data->pages->homepage->aboutHeading}</h2>
-            <p><strong class="editableTextfield" path="{$helperFunctions->getPath($data, 'aboutSubHeading')}" lang="{$lang}">{$data->pages->homepage->aboutSubHeading}</strong></p>
-            <p class="editableTextarea" path="{$helperFunctions->getPath($data, 'aboutDescription')}" lang="{$lang}">{$data->pages->homepage->aboutDescription}</p>
+            <h2 lang="{$lang}">{$data->page_homepage_aboutHeading}</h2>
+            <p><strong lang="{$lang}">{$data->page_homepage_aboutSubHeading}</strong></p>
+            <p lang="{$lang}">{$data->page_homepage_aboutDescription}</p>
         </div>
         <div class="divBlockRight_6">
 
         </div>
     </div>
-    <div id="Sluzby" class="divBlock">
-        <div class="divSluzbyOuter">
-            <h2 class="editableTextfield" path="{$helperFunctions->getPath($data, 'ourServicesHeading')}" lang="{$lang}">{$data->pages->homepage->ourServicesHeading}</h2>
+    <div class="divBlock">
+        <div id="blockSluzby"  class="divSluzbyOuter">
+            <h2 class="editableTextfield" lang="{$lang}">{$data->page_homepage_ourServicesHeading}</h2>
             <div class="divSluzby">
-                <div n:foreach="$data->pages->homepage->redBlocks as $block" class="divSluzba">
+                <div n:foreach="$data->page_homepage_redBlocks as $block" class="divSluzba">
                     {var $i = $iterator->counter - 1}
                     <h3 class="h3Sluzby">
-                        <a class="aRightless editableTextfield" n:href="Sluzby:$block->code"  path="{$helperFunctions->getPath($data, 'redBlocks')}/{$iterator->counter}/heading" lang="{$lang}">{$data->pages->homepage->redBlocks[$i]->heading}</a>
+                        <a class="aRightless editableTextfield" n:href="Sluzby:$block->code"  lang="{$lang}">{$data->page_homepage_redBlocks[$i]->heading}</a>
                     </h3>
                     {foreach $block->items as $item}
                         {var $position = $iterator->counter - 1}
-                        {var $path = $helperFunctions->getPath($data, 'redBlocks')."/".$i."/".items."/".$position}
-                        {var $content = $data->pages->homepage->redBlocks[$i]->items[$position]}
+                        {var $content = $data->page_homepage_redBlocks[$i]->items[$position]}
                         {if strlen($content) > 0}
-                            <p class="pSluzby" path="{$path}" order="{$iterator->counter - 1}">
-                                <a class="aRightless editableTextfield" n:href="Sluzby:$block->code" path="{$path}" lang="{$lang}">{$content}</a>
+                            <p class="pSluzby" order="{$iterator->counter - 1}">
+                                <a class="aRightless editableTextfield" n:href="Sluzby:$block->code" lang="{$lang}">{$content}</a>
                             </p>
                         {/if}
                     {/foreach}
-                    {if $user->isLoggedIn()}
-                        <button cardId="addNewRedBlockItem_{$i}" class="addNewRedBlockItem button-success">Add item</button>
-                    {/if}
                 </div>
             </div>
         </div>
@@ -66,11 +60,11 @@
 {block script}
     <script type="text/javascript">
         drzAktivni(null);
-        $(".addNewRedBlockItem").click(e => {
-            this.addRowToRedBlock(e, {$lang}, () => {
-                this.setEditable();
-            });
-        })
+        $("#sluzbyButton").click(function() {
+            $('html, body').animate({
+                scrollTop: $("#blockSluzby").offset().top
+            }, 600);
+        });
     </script>
 {/block}
 

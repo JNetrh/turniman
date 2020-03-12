@@ -162,7 +162,7 @@ div {
 div.divNav {
     max-width: 1024px;
     margin: 0 auto;
-    padding: 2em 1em 1em 1em;
+    padding: 2rem 0;
     display: flex;
     /* flex-direction: column; */
     overflow: hidden;
@@ -210,84 +210,12 @@ div.divLangListItem {
     align-items: center;
 }
 
-div.divCover {
-    /* z-index: 0; */
-    /* position: relative; */
-    /* top: -130px; */
-    margin-bottom: -130px;
-    display: flex;
-    height: 700px;
-    overflow-x: hidden;
-    overflow-y: hidden;
-}
-
-div.divCoverText {
-    margin: 0 auto;
-    width: 100%;
-    text-align: center;
-    /* z-index: 2001; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    top: -130px;
-}
 div.divBlock {
     margin: 0 auto;
     max-width: 1024px;
-    padding: 7em 15px 0 15px;
+    padding: 3rem 1rem;
     display: flex;
-    flex-direction: row;
 }
-
-div.divBlockLeft_4 {
-    width: 40%;
-}
-
-div.divBlockRight_6 {
-    width: 60%;
-}
-
-
-div.divSluzbyOuter {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-div.divSluzby {
-    margin-top: 3em;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-div.divSluzba {
-    background-image: url("../img/red-service-cover.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    padding: 1.8em;
-    position: relative;
-    opacity: 1.0;
-    filter: alpha(opacity=100);
-    transition: opacity 0.5s;
-    width: 45%;
-}
-
-div.divSluzba:hover {
-    opacity: 0.6;
-    filter: alpha(opacity=60);
-}
-
-/*div.divSluzba:before {*/
-    /*content: " ";*/
-    /*width: 2.5em;*/
-    /*height: 2.5em;*/
-    /*background-color: #FFFFFF;*/
-    /*position: absolute;*/
-    /*right: 0;*/
-    /*bottom: 0;*/
-/*}*/
 
 div.divContactForm {
     margin-top: 20px;
@@ -381,36 +309,11 @@ h3 {
     text-transform: none;
 }
 
-h1.h1Cover {
-    color: #E8E7E8;
-}
-h1.h1Intro {
-    color: #000000;
-}
-
 h2.h2Kontakt {
     margin: 0;
 }
 
-h2.h2TypSluzby {
-    font-size: 1.5em;
-    font-weight: normal;
-}
-
-
-h3.h3TypSluzby {
-    font-family: 'National_Bold', 'Lucida Sans Unicode', sans-serif !important;
-    font-size: 1em;
-    color: #FD1A1A;
-}
-
-h3.h3Sluzby {
-    font-family: 'National_Regular', 'Lucida Sans Unicode', sans-serif !important;
-    margin: 0;
-    color: #FFFFFF;
-}
-
-p {
+p, a {
     font-family: 'National_Light', 'Lucida Sans Unicode', sans-serif !important;
     font-size: 1em;
     color: #36383A;
@@ -422,21 +325,6 @@ p {
 p.pClear {
     height: 0;
     clear: both;
-}
-
-p.pSluzby {
-    color: #FFFFFF;
-}
-
-
-p.pMore:before {
-    content: '\f178';
-    /* content: '\f30b'; */
-    font: 18px fontawesome;
-    color: #FD1A1A;
-    margin-right: 0.5em;
-    position: relative;
-    top: 0.1em;
 }
 
 strong {
@@ -484,16 +372,7 @@ img.imgLogo a{
 }
 
 img.imgLogo {
-    height: 130px;
-}
-
-img.imgCover {
-    position: absolute;
-    width: 100%;
-    left: -2px;
-    height: auto;
-    z-index: -1001;
-    top: 0px;
+    height: 75px;
 }
 
 img.imgFlag {
@@ -508,7 +387,7 @@ img.imgFlag {
 .caretDown:after {
     content: '\f0d7';
     font: 18px fontawesome;
-    color: #E8E7E8;
+    color: #525252;
     margin-left: 15px;
 }
 
@@ -552,6 +431,10 @@ a.aMenu:hover:after, a.aMenuActive::after {
     width: 33.33%;
 }
 
+a.aMenu, a.aMenuActive {
+    color: #525252;
+}
+
 a.aLang {
     text-decoration: none;
     padding-left: 15px;
@@ -560,15 +443,6 @@ a.aLang {
 
 a.aLang:hover {
     text-decoration: underline;
-}
-
-a.aRightless, a.aRightless:hover {
-    font-family: inherit;
-    font-size: inherit;
-    font-weight: inherit;
-    color: inherit;
-    display: inherit;
-    text-decoration: inherit;
 }
 
 a.aLogOut {
@@ -659,6 +533,8 @@ div.divFormField input, div.divFormField textarea  {
 div.divFormField textarea
 {
     min-height: 150px;
+    min-width: 100%;
+    max-width: 560px;
 }
 
 div.divFormField input:focus, div.divFormField textarea:focus {
@@ -796,9 +672,6 @@ nav.navigation {
     {
         font-size: 20px;
     }
-    div.divCover {
-        height: 400px;
-    }
     img.imgCover {
         width: 120%;
     }
@@ -810,9 +683,6 @@ nav.navigation {
     body, p, ul, ol, ul li, ol li, table, table td, div, a, a:hover, a:visited, input, textarea, select, label
     {
         font-size: 19px;
-    }
-    div.divCover {
-        height: 400px;
     }
     img.imgCover {
         width: 135%;
@@ -826,9 +696,6 @@ nav.navigation {
     {
         font-size: 16px;
     }
-    div.divCover {
-        height: 320px;
-    }
     img.imgCover {
         width: 150%;
     }
@@ -840,9 +707,6 @@ nav.navigation {
     body, p, ul, ol, ul li, ol li, table, table td, div, a, a:hover, a:visited, input, textarea, select, label
     {
         font-size: 12px;
-    }
-    div.divCover {
-        height: 320px;
     }
     img.imgCover {
         width: 200%;

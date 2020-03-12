@@ -17,6 +17,8 @@
         <!--CSS custom style-->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
         <link href="{$basePath}/css/styl.css" rel="stylesheet" type="text/css"/>
+        <link href="{$basePath}/css/homepage.css" rel="stylesheet" type="text/css"/>
+        <link href="{$basePath}/css/sluzby.css" rel="stylesheet" type="text/css"/>
         <!--SCRIPT jQuery-->
         {*<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>*}
         <!--SCRIPT custom scripts-->
@@ -41,82 +43,67 @@
     </head>
     <body itemscope itemtype='http://schema.org/LocalBusiness' >
 
-        {if $user->isLoggedIn()}
-            {include 'settingsPanel.latte'}
-        {/if}
-
-        <nav class="navigation">
-            <div class="divNav">
-                <a n:href="Homepage: ">
-                    <img class="imgLogo" src="{$basePath}/img/logo.png" alt="logo Turniman" />
-                </a>
-                <div class="divMenu">
-                    <ul class="ulMenu">
-                        <li><a id="onas" class="aMenu editableTextfield" n:href="ONas: " path="{$helperFunctions->getPath($data, 'menu', '1')}" lang="{$lang}">{ifset menuONas}{include menuONas}{/ifset}</a></li>
-                        <li><a id="sluzby" class="aMenu editableTextfield" n:href="Homepage:default#Sluzby" path="{$helperFunctions->getPath($data, 'menu', '0')}" lang="{$lang}">{ifset menuSluzby}{include menuSluzby}{/ifset}</a></li>
-                        <li><a id="kontakt" class="aMenu editableTextfield" href="#contact" path="{$helperFunctions->getPath($data, 'menu', '2')}" lang="{$lang}">{ifset menuKontakt}{include menuKontakt}{/ifset}</a></li>
-                        <li>
-                            <ul class="ulLang">
-                                <li>
-                                    <div class="divLang">
-                                        <img class="imgFlag" src="{$basePath}/img/flags/{$lang}.png" alt="{$lang}-flag"/>
-                                        <label class="caretDown" ></label>
-                                    </div>
-                                    <div class="divLangList">
-                                        {if $user->isLoggedIn()}
-                                            <div class="divLangListItem">
-                                                <button class="toggleNewLang buttonAddNewLang button-success">Add language</button>
-                                            </div>
-                                        {/if}
-                                        <div n:foreach="$allLanguages as $language" class="divLangListItem">
-                                            <a n:href="changeLang! $language->getCode()">
-                                                <img class="imgFlag" src="{$basePath}/img/flags/{$language->getCode()}.png" alt="{$language->getCode()}-flag"/>
-                                            </a>
-                                            <a n:href="changeLang! $language->getCode()" class="aLang">
-                                                {if $language->getCode() == $lang}
-                                                    <strong>{$language->getName()}</strong>
-                                                {else}
-                                                    {$language->getName()}
-                                                {/if}
-
-                                            </a>
-                                            {if $user->isLoggedIn()}
-                                                <a n:href="deleteLang! $language->getCode()">
-                                                    <i class="iCloseNewLangIcon toggleNewLang fas fa-times"></i>
-                                                </a>
+    <nav class="navigation">
+        <div class="divNav">
+            <a n:href="Homepage: ">
+                <img class="imgLogo" src="{$basePath}/img/logo.png" alt="logo Turniman" />
+            </a>
+            <div class="divMenu">
+                <ul class="ulMenu">
+                    <li><a id="onas" class="aMenu" n:href="ONas: " lang="{$lang}">{ifset menuONas}{include menuONas}{/ifset}</a></li>
+                    <li><a id="sluzby" class="aMenu" n:href="Homepage:default#blockSluzby"  lang="{$lang}">{ifset menuSluzby}{include menuSluzby}{/ifset}</a></li>
+                    <li><a id="kontakt" class="aMenu" n:href="Homepage:default#blockKontakt"   lang="{$lang}">{ifset menuKontakt}{include menuKontakt}{/ifset}</a></li>
+                    <li>
+                        <ul class="ulLang">
+                            <li>
+                                <div class="divLang">
+                                    <img class="imgFlag" src="{$basePath}/img/flags/{$lang}.png" alt="{$lang}-flag"/>
+                                    <label class="caretDown" ></label>
+                                </div>
+                                <div class="divLangList">
+                                    <div n:foreach="$allLanguages as $language" class="divLangListItem">
+                                        <a n:href="changeLang! $language->getCode()">
+                                            <img class="imgFlag" src="{$basePath}/img/flags/{$language->getCode()}.png" alt="{$language->getCode()}-flag"/>
+                                        </a>
+                                        <a n:href="changeLang! $language->getCode()" class="aLang">
+                                            {if $language->getCode() == $lang}
+                                                <strong>{$language->getName()}</strong>
+                                            {else}
+                                                {$language->getName()}
                                             {/if}
-                                        </div>
-                                        {*<div class="divLangListItem">*}
-                                            {*<a n:href="changeLang! 'cz'">*}
-                                                {*<img class="imgFlag" src="{$basePath}/img/flags/cz.png" alt="cz-flag"/>*}
 
-                                            {*</a>*}
-                                            {*<a n:href="changeLang! 'cz'" class="aLang"><strong>cz</strong></a>*}
-                                        {*</div>*}
+                                        </a>
                                     </div>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+                                    <div class="divLangListItem">
+                                        <a n:href="changeLang! 'cz'">
+                                            <img class="imgFlag" src="{$basePath}/img/flags/cz.png" alt="cz-flag"/>
 
+                                        </a>
+                                        <a n:href="changeLang! 'cz'" class="aLang"><strong>cz</strong></a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
         {include content}
 
-        <div id="contact" class="divBlock">
+        <div id="blockKontakt" class="divBlock">
             <div class="divBlockLeft_4">
-                <h2 class="h2Kontakt editableTextfield" path="{$helperFunctions->getPath($data, 'contact')}/heading" lang="{$lang}">{$data->contact->heading}</h2>
+                <h2 class="h2Kontakt"  lang="{$lang}">{$data->contact_heading}</h2>
                 <p>
-                    TURNIMAN Advisory, s.r.o. <br />
-                    Korunní 2569/108, Vinohrady <br />
-                    Praha 10, 101 00
+                    {$data->contact_address_name} <br />
+                    {$data->contact_address_address1} <br />
+                    {$data->contact_address_address2}
                 </p>
-                <p class="editableTextfield" path="{$helperFunctions->getPath($data, 'email')}" lang="{$lang}">
-                    {$data->contact->email}
+                <p lang="{$lang}">
+                    {$data->contact_email}
                 </p>
-                <p class="editableTextfield" path="{$helperFunctions->getPath($data, 'dataBox')}" lang="{$lang}">
-                    {$data->contact->dataBox}
+                <p  lang="{$lang}">
+                    {$data->contact_dataMail}
                 </p>
             </div>
             <div class="divBlockRight_6">
@@ -145,7 +132,7 @@
                             </div>
                         </div>
                         <div class="divContactRow">
-                            <p class="pMore"><button class="buttonForm editableTextfield" type="submit" path="{$helperFunctions->getPath($data, 'sendButton')}" lang="{$lang}">{$data->contact->sendButton}</button> </p>
+                            <p class="pMore"><button class="buttonForm" type="submit">{$data->contact_sendButton}</button> </p>
                         </div>
                     {/form}
                 </div>
@@ -158,9 +145,18 @@
         <script src="{$basePath}/js/bundle.js" type="text/javascript"></script>
         <script src="{$basePath}/js/main.js" type="text/javascript"></script>
         <script type="text/javascript">
-            {if $user->isLoggedIn()}
-                this.setEditable();
-            {/if}
+
+            $("#sluzby").click(function() {
+                $('html, body').animate({
+                    scrollTop: $("#blockSluzby").offset().top
+                }, 600);
+            });
+
+            $("#kontakt").click(function() {
+                $('html, body').animate({
+                    scrollTop: $("#blockKontakt").offset().top
+                }, 600);
+            });
         </script>
         {include script}
     {/ifset}
