@@ -1,32 +1,57 @@
-{block description}{/block}
-{block title}{/block}
-{block keywords}{/block}
-{block menuSluzby}{$data->menu[0]}{/block}
-{block menuONas}{$data->menu[1]}{/block}
-{block menuKontakt}{$data->menu[2]}{/block}
+{block description}{$data->description|noescape}{/block}
+{block title}TURNIMAN Advisory {/block}
+{block keywords}{$data->keyWords|noescape}{/block}
+{block menuSluzby}{$data->menu[0]|noescape}{/block}
+{block menuONas}{$data->menu[1]|noescape}{/block}
+{block menuKontakt}{$data->menu[2]|noescape}{/block}
 {block content}
     <div class="divBlock">
         <div>
-            <h1 class="h1Intro " lang="{$lang}">{$data->page_homepage_welcomeHeading}</h1>
-            <p lang="{$lang}">{$data->page_homepage_welcomeSubHeading}</p>
-            <p class="pMore"><a class="aMore" id="sluzbyButton" href="#" lang="{$lang}">{$data->page_homepage_welcomeLink}</a></p>
+            <h1 class="h1Intro " lang="{$lang}">{$data->page_homepage_welcomeHeading|noescape}</h1>
+            <p lang="{$lang}">{$data->page_homepage_welcomeSubHeading|noescape}</p>
+            <p class="pMore"><a class="aMore" id="sluzbyButton" href="#" lang="{$lang}">{$data->page_homepage_welcomeLink|noescape}</a></p>
         </div>
     </div>
-    <div class="divBlock">
-        <div class="divBlockLeft_4">
-            <h2 lang="{$lang}">{$data->page_homepage_aboutHeading}</h2>
-            <p><strong lang="{$lang}">{$data->page_homepage_aboutSubHeading}</strong></p>
-            <p lang="{$lang}">{$data->page_homepage_aboutDescription}</p>
+    <div id="blockONas" class="divBlock">
+        <div class="divWrapObout">
+            <div class="divBlock_5">
+                <h2 lang="{$lang}">{$data->page_homepage_aboutHeading|noescape}</h2>
+                <p style="min-height: 1.5rem;"><strong lang="{$lang}">{$data->page_homepage_aboutSubHeading|noescape}</strong></p>
+                <p class="trimWidth" lang="{$lang}">{$data->page_homepage_aboutDescription|noescape}</p>
+            </div>
+            <div class="divBlock_5">
+                <h2 lang="{$lang}">{$data->page_homepage_subjectsHeading|noescape}</h2>
+                <p style="min-height: 1.5rem;" />
+                <p className="trimWidth" lang="{$lang}">{$data->page_homepage_subjectsSubHeading|noescape}</p>
+                {var $arrLength = count($data->page_homepage_subjects)}
+                {var $half = $arrLength / 2}
+                <div style="display: flex;">
+                    <div class="divBlock_5">
+                        <ul class="ulSluzba">
+                            <li n:for="$i = 0; $i < $half; $i++" >
+                                {$data->page_homepage_subjects[$i]|noescape}
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="divBlock_5">
+                        <ul class="ulSluzba">
+                            <li n:for="$i = $half + 1; $i < $arrLength; $i++" >
+                                {$data->page_homepage_subjects[$i]|noescape}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="divBlock">
         <div id="blockSluzby"  class="divSluzbyOuter">
-            <h2 lang="{$lang}">{$data->page_homepage_ourServicesHeading}</h2>
+            <h2 lang="{$lang}">{$data->page_homepage_ourServicesHeading|noescape}</h2>
             <div class="divSluzby">
                 <div n:foreach="$data->page_homepage_redBlocks as $block" class="divSluzba">
                     {var $i = $iterator->counter - 1}
                         <a class="aH3Sluzby" n:href="Sluzby:$block->code"  lang="{$lang}">
-                            <h3 class="h3Sluzby">{$data->page_homepage_redBlocks[$i]->heading}</h3>
+                            <h3 class="h3Sluzby">{$data->page_homepage_redBlocks[$i]->heading|noescape}</h3>
                         </a>
                     {foreach $block->items as $item}
                         {var $position = $iterator->counter - 1}
@@ -34,7 +59,7 @@
                         {if strlen($content) > 0}
                             <a class="aPSluzby" n:href="Sluzby:$block->code" lang="{$lang}">
                                 <p class="pSluzby" order="{$iterator->counter - 1}">
-                                   {$content}
+                                   {$content|noescape}
                                 </p>
                             </a>
                         {/if}

@@ -1,0 +1,145 @@
+{
+  "lang": "en",
+  "langLong": "čeština",
+  "menu": ["Naše služby", "O nás", "Kontakt"],
+  "page_homepage_code": "homepage",
+  "page_homepage_welcomeHeading": "Firma s dlouholetou praxí ve finančním a krizovém řízení nebo poradenství",
+  "page_homepage_welcomeSubHeading": "Nabízíme odborné služby pro vaši organizaci",
+  "page_homepage_welcomeLink": "Více o našich službách",
+  "page_homepage_aboutHeading": "O nás",
+  "page_homepage_aboutSubHeading": "Jednatel společnosti: Martin Ježek",
+  "page_homepage_aboutDescription": "TURNIMAN Advisory, s.r.o. je poradenská firma zaměřená na&nbsp;interim management, krizové řízení a&nbsp;restrukturalizace firem.",
+  "page_homepage_subjectsHeading": "Obory",
+  "page_homepage_subjectsSubHeading": "Při&nbsp;realizaci projektů spolupracujeme s&nbsp;prověřenými partnery v&nbsp;oborech",
+  "page_homepage_subjects": [
+    "Daňoví a účetní poradci",
+    "M/A poradci",
+    "Právní poradci",
+    "Právní poradci",
+    "Interim manažeři",
+    "Znalecké ústavy"
+  ],
+  "page_homepage_ourServicesHeading": "Naše služby",
+  "page_homepage_redBlocks": [
+    {
+      "heading":"Interim management",
+      "code":"interim",
+      "items":[
+        "Substituční interim management",
+        "Postakviziční transformace",
+        "Krizový management",
+        "Asistence insolvenčním správcům"
+      ]
+    },
+    {
+      "heading":"Odborné poradenství",
+      "code":"advisory",
+      "items":[
+        "M/A asistence",
+        "Restrukturalizace společnosti"
+      ]
+    }
+  ],
+  "service_1": {
+    "code": "interim",
+    "welcomeHeading": "Interim management",
+    "blocks": [
+      {
+        "heading":"Substituční interim management",
+        "items":[
+          {
+            "subHeading":"Pro koho to je určeno: ",
+            "description":"firma, jíž dočasně chybí finanční nebo&nbsp;výkonný ředitel"
+          },
+          {
+            "subHeading":"Cíl: ",
+            "description":"zajistit běžný chod firmy, dokud nebude nalezen a&nbsp;nenastoupí nový manažer"
+          }
+        ]
+      },
+      {
+        "heading":"Postakviziční transformace",
+        "items":[
+          {
+            "subHeading":"Pro koho to je určeno: ",
+            "description":"investor, který po&nbsp;akvizici nemá vhodného manažera a&nbsp;potřebuje zavést korporátní pravidla"
+          },
+          {
+            "subHeading":"Cíl: ",
+            "description":"překlenout dobu do&nbsp;nástupu stabilního manažerského týmu, připravit firmu na&nbsp;řízení najatými manažery tak, aby&nbsp;vlastník nemusel řešit běžnou operativu"
+          }
+        ]
+      },
+      {
+        "heading":"Krizový management",
+        "items":[
+          {
+            "subHeading":"Pro koho to je určeno: ",
+            "description":"investoři společnosti, jíž se nedaří a&nbsp;nemá manažery se&nbsp;zkušenostmi s&nbsp;krizovým řízením"
+          },
+          {
+            "subHeading":"Cíl: ",
+            "description":"udržet firmu v&nbsp;chodu, identifikovat příčinu problémů, najít a&nbsp;realizovat řešení"
+          }
+        ]
+      },
+      {
+        "heading":"Asistence insolvenčním správcům",
+        "items":[
+          {
+            "subHeading":"Pro koho to je určeno: ",
+            "description":"insolvenční správci"
+          },
+          {
+            "subHeading":"Cíl: ",
+            "description":"zajistit fungování firmy po&nbsp;dobu reorganizace nebo&nbsp;konkurzu, poskytnout potřebnou podporu pro&nbsp;výkon funkce insolvenčního správce"
+          }
+        ]
+      }
+    ]
+  },
+  "service_2": {
+    "code": "advisory",
+    "welcomeHeading": "Odborné poradenství",
+    "blocks": [
+      {
+        "heading":"M/A asistence",
+        "items":[
+          {
+            "subHeading":"Pro koho je určeno:",
+            "description":"investor, který nemá vlastní akviziční tým"
+          },
+          {
+            "subHeading":"Cíl:",
+            "description":"úspěšně dokončit akvizici bez&nbsp;následných nemilých překvapení"
+          }
+        ]
+      },
+      {
+        "heading":"Restrukturalizace společnosti",
+        "items":[
+          {
+            "subHeading":"Pro koho je určeno:",
+            "description":"věřitelé nebo vlastníci společnosti, která není schopna plnit své finanční závazky"
+          },
+          {
+            "subHeading":"Cíl:",
+            "description":"ve spolupráci s&nbsp;odbornými partnery ozdravit bilanci firmy a&nbsp;provozně&nbsp;ji restrukturalizovat tak, aby se&nbsp;mohla rozvíjet"
+          }
+        ]
+      }
+    ]
+  },
+
+  "contact_heading": "Kontakt",
+  "contact_sendButton": "Odeslat",
+  "contact_address_name": "TURNIMAN Advisory, s.r.o.",
+  "contact_address_address_1_row1": "Korunní 2569/108, Vinohrady",
+  "contact_address_address_1_row2": "101 00 Praha 10",
+  "contact_address_address_2_row1": "Kancelář: Hradešínská 37, Praha 10",
+  "contact_email": "email: info@turniman.eu",
+  "contact_dataMail": "Datová schránka: z2itund",
+  "contact_dic": "DIČ: CZ07825820",
+  "keyWords": "interim, poradenství, management, společnost, poradci, restrukturalizace, postakvizice, firma, finance, podnik, asistence, advisory, akvizice, transformace, odborné, Martin, Ježek ",
+  "description": "TURNIMAN Advisory s.r.o. je firma která se zabývá interim managementem a odborným poradenstvím pro firmy a společnosti, které se dostali do jakých koliv potíží. Ať jim schází klíčový manažer nebo potřebují zválnout akvizice. "
+}

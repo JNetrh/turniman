@@ -27,6 +27,10 @@ p.pSluzby {
     color: #FFFFFF;
 }
 
+p.trimWidth {
+    max-width: 20rem
+}
+
 a.aMore {
     font-family: 'National_Regular', 'Lucida Sans Unicode', sans-serif !important;
 }
@@ -40,9 +44,13 @@ a.aPSluzby:last-child p {
     padding: 1rem 1rem 3rem 1rem ;
 }
 
-div.divBlockLeft_4 {
-    flex-basis: 40%;
-    -webkit-flex-basis: 40%;
+div.divBlock_5 {
+    width: 50%;
+}
+
+div.divWrapObout {
+    display: flex;
+    flex-direction: row;
 }
 
 div.divSluzbyOuter {
@@ -72,4 +80,61 @@ div.divSluzba {
 div.divSluzba:hover {
     opacity: 0.6;
     filter: alpha(opacity=60);
+}
+
+ul.ulSluzba {
+    margin: 0;
+    padding: 0;
+}
+ul.ulSluzba li {
+    margin: 0;
+    padding: 1rem 0 0 0;
+    list-style-type: none;
+}
+
+
+
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+
+    div.divBlock_5 {
+        width: 100%;
+    }
+    div.divWrapObout {
+        flex-direction: column;
+    }
+    p.trimWidth {
+        max-width: 100%;
+    }
+
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+
+    div.divBlock_5 {
+        width: 100%;
+    }
+    div.divWrapObout {
+        flex-direction: column;
+    }
+    p.trimWidth {
+        max-width: 100%;
+    }
+
+}
+
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+
+    div.divBlock_5 {
+        width: 100%;
+    }
+    div.divWrapObout {
+        flex-direction: column;
+    }
+    p.trimWidth {
+        max-width: 100%;
+    }
 }

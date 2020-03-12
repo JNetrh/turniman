@@ -1,6 +1,6 @@
-{block description}{/block}
-{block title}{/block}
-{block keywords}{/block}
+{block description}{$data->description|noescape}{/block}
+{block title}TURNIMAN Advisory {/block}
+{block keywords}{$data->keyWords|noescape}{/block}
 {block menuSluzby}{$data->menu[0]}{/block}
 {block menuONas}{$data->menu[1]}{/block}
 {block menuKontakt}{$data->menu[2]}{/block}

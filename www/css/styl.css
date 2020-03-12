@@ -168,7 +168,7 @@ div.divNav {
     overflow: hidden;
     height: 130px;
     align-items: center;
-    z-index: 2001;
+    /*z-index: 2001;*/
 }
 
 div.divMenu {
@@ -194,7 +194,7 @@ div.divLang:hover + div.divLangList, div.divLangList:hover {
 div.divLangList {
     display: none;
     padding: 0;
-    z-index: 9999;
+    /*z-index: 9999;*/
     position: absolute;
     background-color: #FFFFFF;
     border-radius: 5px;
@@ -333,6 +333,11 @@ strong {
     color: #FD1A1A;
 }
 
+strong.strongLang {
+    margin-left: 1rem;
+    padding-bottom: 0.125rem;
+}
+
 em {
     font-family: inherit;
     font-size: inherit;
@@ -436,13 +441,21 @@ a.aMenu, a.aMenuActive {
 }
 
 a.aLang {
+    display: flex;
+    align-items: center;
     text-decoration: none;
     padding-left: 15px;
     font-size: 0.8em;
 }
 
+a.aLang:hover strong {
+     border-bottom: 0.125rem solid #FD1A1A;
+     padding-bottom: 0;
+ }
+
 a.aLang:hover {
-    text-decoration: underline;
+    text-decoration: none;
+    font-size: 0.8em;
 }
 
 a.aLogOut {
@@ -493,9 +506,6 @@ ul.ulMenu li ul.ulLang li {
     list-style-type: none;
 }
 
-ul.ulMenu li ul.ulLang li a {
-    display: block;
-}
 
 
 /*----------------------------------------------------------------------------*/
@@ -516,7 +526,7 @@ div.divFormField label {
     position: relative;
     width: 80px;
     margin-right: -80px;
-    z-index: -9999;
+    /*z-index: -9999;*/
     top: 0px;
 }
 
@@ -652,7 +662,7 @@ nav.navigation {
     width: 100%;
     margin: 0;
     padding: 0;
-    z-index: 1001;
+    /*z-index: 1001;*/
 }
 
 
