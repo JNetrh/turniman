@@ -6,3 +6,4 @@ temp/*
 !.gitignore
 !web.config
 www/config.ini
+config.ini
