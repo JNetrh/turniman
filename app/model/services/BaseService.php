@@ -9,6 +9,9 @@
 namespace App\Model\Services;
 
 
+use App\Model\Entities\Language;
+use App\Model\Entities\Mutation;
+
 abstract class BaseService
 {
 
@@ -21,7 +24,13 @@ abstract class BaseService
         return $this->entities->findOneBy(array('id' => $val));
     }
 
-    public function getEntities() {
-        return $this->entities->findAll();
+    public function getEntities($all = false) {
+        if($all) {
+            return $this->entities->findAll();
+        }
+        $sql = 'SELECT m FROM '.Mutation::class.' m WHERE m.deprecated = 0';
+        $query = $this->entityManager->createQuery($sql);
+        $data = $query->getResult();
+        return $data;
     }
 }

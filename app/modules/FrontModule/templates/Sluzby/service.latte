@@ -1,96 +1,39 @@
-{block description}{/block}
-{block title}{/block}
-{block keywords}{/block}
-{block menuSluzby}{$data->menu[0]}{/block}
-{block menuONas}{$data->menu[1]}{/block}
-{block menuKontakt}{$data->menu[2]}{/block}
-{block content}
 <div class="divCover">
     <img class="imgCover" src="{$basePath}/img/cover.jpg" alt="cover" />
     <div class="divCoverText">
-        <h1 class="h1Cover">Interim management</h1>
+        <h1 class="h1Cover editableTextfield" path="{$helperFunctions->getPath($data, $serviceName)}/welcomeHeading" lang="{$lang}">{$data->pages->{$serviceName}->welcomeHeading}</h1>
     </div>
 </div>
-<div class="divBlock">
-    <div class="divBlockLeft_4">
-        <h2 class="h2TypSluzby">Substituční<br />interim management</h2>
-    </div>
-    <div class="divBlockRight_6">
-        <h3 class="h3TypSluzby">Pro koho je určeno</h3>
-        <p>
-            firma, jíž dočasně chybí finanční nebo výkonný ředitel
-        </p>
-        <h3 class="h3TypSluzby">Cíl</h3>
-        <p>
-            zajistit běžný chod firmy, dokud nebude nalezen a nenastoupí nový manažer
-        </p>
-
-        <h3 class="h3TypSluzby">obvyklý rozsah</h3>
-        <p>
-            Okamžité převzetí funkce výkonného/finančního ředitele
-            <br />
-            Zajištění běžné agendy odpovídající sjednané funkci
-            <br />
-            Identifikace vhodných změnových projektů v oblasti řízení
-            <br />
-            Předání funkce stálému manažerovi po jeho nástupu
-            <br />
-            V případě zájmu realizace identifikovaných změnových projektů
-        </p>
-
-    </div>
-</div>
-<div class="divBlock">
-    <div class="divBlockLeft_4">
-        <h2 class="h2TypSluzby">Substituční<br />interim management</h2>
-    </div>
-    <div class="divBlockRight_6">
-        <h3 class="h3TypSluzby">Pro koho je určeno</h3>
-        <p>
-            firma, jíž dočasně chybí finanční nebo výkonný ředitel
-        </p>
-        <h3 class="h3TypSluzby">Cíl</h3>
-        <p>
-            zajistit běžný chod firmy, dokud nebude nalezen a nenastoupí nový manažer
-        </p>
-
-        <h3 class="h3TypSluzby">obvyklý rozsah</h3>
-        <p>
-            Okamžité převzetí funkce výkonného/finančního ředitele
-            <br />
-            Zajištění běžné agendy odpovídající sjednané funkci
-            <br />
-            Identifikace vhodných změnových projektů v oblasti řízení
-            <br />
-            Předání funkce stálému manažerovi po jeho nástupu
-            <br />
-            V případě zájmu realizace identifikovaných změnových projektů
-        </p>
-
-    </div>
-</div>
-{/block}
-
-
-{block script}
-
-
-    <script type="text/javascript">
-        drzAktivni('sluzby')
-    </script>
-{/block}
-
-{block gAnalytics}
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135749419-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-135749419-1');
-    </script>
-{/block}
-
+{foreach $data->pages->{$serviceName}->blocks as $block}
+    {var $i = $iterator->counter -1}
+    {var $isHeading = $data->pages->{$serviceName}->blocks[$i]->heading}
+    {var $higherPath = $helperFunctions->getPath($data, $serviceName)."/blocks/".$i}
+    {if strlen($isHeading) > 0 || $i == 0}
+        <div higherOrder="{$i}" higherPath="{$higherPath}" class="divBlock">
+            <div class="divBlockLeft_4">
+                <h2 class="h2TypSluzby editableTextfield" path="{$helperFunctions->getPath($data, $serviceName)}/blocks/{$i}/heading" lang="{$lang}">{$data->pages->{$serviceName}->blocks[$i]->heading}</h2>
+            </div>
+            <div class="divBlockRight_6">
+                {foreach $block->items as $items}
+                    {var $position = $iterator->counter - 1}
+                    {var $path = $helperFunctions->getPath($data, $serviceName)."/blocks/".$i."/".items."/".$position}
+                    {var $content = $data->pages->{$serviceName}->blocks[$i]->items[$position]->subHeading}
+                    {if strlen($content) > 0 || $position == 0}
+                        <div  order="{$position}" path="{$path}">
+                            <h3 class="h3TypSluzby editableTextfield" path="{$helperFunctions->getPath($data, $serviceName)}/blocks/{$i}/items/{$position}/subHeading" lang="{$lang}">{$data->pages->{$serviceName}->blocks[$i]->items[$position]->subHeading}</h3>
+                            <p class="editableTextfield" path="{$helperFunctions->getPath($data, $serviceName)}/blocks/{$i}/items/{$position}/description" lang="{$lang}">
+                                {$data->pages->{$serviceName}->blocks[$i]->items[$position]->description}
+                            </p>
+                        </div>
+                    {/if}
+                {/foreach}
+                {if $user->isLoggedIn()}
+                    <button cardId="addNewServiceBlockItem_{$position}" class="addNewServiceBlockItem button-success">Add item</button>
+                {/if}
+            </div>
+        </div>
+    {/if}
+{/foreach}
+{if $user->isLoggedIn()}
+    <button cardId="addNewServiceBlock" class="addNewServiceBlock button-success">Add service block</button>
+{/if}

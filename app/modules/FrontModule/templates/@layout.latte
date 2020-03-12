@@ -15,6 +15,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no">
 
         <!--CSS custom style-->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
         <link href="{$basePath}/css/styl.css" rel="stylesheet" type="text/css"/>
         <!--SCRIPT jQuery-->
         {*<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>*}
@@ -41,12 +42,14 @@
     <body itemscope itemtype='http://schema.org/LocalBusiness' >
 
         {if $user->isLoggedIn()}
-            <div class="divLanguageTranslateController">Make text editable <input type="checkbox" checked id="isEditable" /></div>
+            {include 'settingsPanel.latte'}
         {/if}
 
         <nav class="navigation">
             <div class="divNav">
-                <div class="divLogo"><em class="emLogo"><a n:href="Homepage: ">Turniman<br />Advisory</a> </em></div>
+                <a n:href="Homepage: ">
+                    <img class="imgLogo" src="{$basePath}/img/logo.png" alt="logo Turniman" />
+                </a>
                 <div class="divMenu">
                     <ul class="ulMenu">
                         <li><a id="onas" class="aMenu editableTextfield" n:href="ONas: " path="{$helperFunctions->getPath($data, 'menu', '1')}" lang="{$lang}">{ifset menuONas}{include menuONas}{/ifset}</a></li>
@@ -60,6 +63,11 @@
                                         <label class="caretDown" ></label>
                                     </div>
                                     <div class="divLangList">
+                                        {if $user->isLoggedIn()}
+                                            <div class="divLangListItem">
+                                                <button class="toggleNewLang buttonAddNewLang button-success">Add language</button>
+                                            </div>
+                                        {/if}
                                         <div n:foreach="$allLanguages as $language" class="divLangListItem">
                                             <a n:href="changeLang! $language->getCode()">
                                                 <img class="imgFlag" src="{$basePath}/img/flags/{$language->getCode()}.png" alt="{$language->getCode()}-flag"/>
@@ -72,6 +80,11 @@
                                                 {/if}
 
                                             </a>
+                                            {if $user->isLoggedIn()}
+                                                <a n:href="deleteLang! $language->getCode()">
+                                                    <i class="iCloseNewLangIcon toggleNewLang fas fa-times"></i>
+                                                </a>
+                                            {/if}
                                         </div>
                                         {*<div class="divLangListItem">*}
                                             {*<a n:href="changeLang! 'cz'">*}

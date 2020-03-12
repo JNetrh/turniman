@@ -26,6 +26,9 @@ abstract class SecuredBasePresenter extends Nette\Application\UI\Presenter
             if(!$this->getUser()->isLoggedIn()){
                 $this->redirect('Sign:in');
             }
+            else {
+                $this->redirect(":Front:Homepage:");
+            }
         }
         else{
             $this->redirect('Sign:in');

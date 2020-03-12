@@ -5,35 +5,23 @@
 {block menuONas}{$data->menu[1]}{/block}
 {block menuKontakt}{$data->menu[2]}{/block}
 {block content}
-    <div class="divCover">
-        <img class="imgCover" src="{$basePath}/img/cover.jpg" alt="cover" />
-        <div class="divCoverText">
-            <h1 class="h1Cover">Interim management</h1>
-        </div>
-    </div>
-
-    <div n:foreach="$data->pages->service_1->blocks as $block" class="divBlock">
-        {var $i = $iterator->counter -1}
-        <div class="divBlockLeft_4">
-            <h2 class="h2TypSluzby editableTextfield" path="{$helperFunctions->getPath($data, 'service_1')}/{$i}/heading" lang="{$lang}">Substituční<br />interim management</h2>
-        </div>
-        <div class="divBlockRight_6">
-            {foreach $block->items as $items}
-                {var $y = $iterator->counter -1}
-                <h3 class="h3TypSluzby editableTextfield" path="{$helperFunctions->getPath($data, 'service_1')}/block/{$i}/items/{$y}/subHeading" lang="{$lang}">{$data->pages->service_1->blocks[$i]->items[$y]->subHeading}</h3>
-                <p class="editableTextfield" path="{$helperFunctions->getPath($data, 'service_1')}/block/{$i}/items/{$y}/subHeading" lang="{$lang}">
-                    {$data->pages->service_1->blocks[$i]->items[$y]->description}
-                </p>
-            {/foreach}
-
-
-        </div>
-    </div>
+    {include 'service.latte' serviceName => 'service_1', data => $data, helperFunctions => $helperFunctions}
 {/block}
+
 
 {block script}
     <script type="text/javascript">
         drzAktivni('sluzby');
+        $(".addNewServiceBlockItem").click(e => {
+            this.addRowToServiceBlock(e, {$lang}, () => {
+                this.setEditable();
+            });
+        });
+        $(".addNewServiceBlock").click(e => {
+            this.addServiceBlock(e, {$lang}, () => {
+                this.setEditable();
+            });
+        });
     </script>
 {/block}
 

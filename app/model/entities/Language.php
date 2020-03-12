@@ -53,8 +53,11 @@ class Language
     protected $position;
 
 
-
-
+    /**
+     * display toggle
+     * @ORM\Column(type="integer")
+     */
+    protected $display;
 
 	/**
 	 * @return int
@@ -133,6 +136,25 @@ class Language
     {
         $this->position = $position;
     }
+
+
+    /**
+     * @return mixed
+     */
+    public function getDisplay()
+    {
+        return $this->display;
+    }
+
+    /**
+     * @param mixed $display
+     */
+    public function setDisplay($display)
+    {
+        $this->display = $display;
+    }
+
+
 
 
 

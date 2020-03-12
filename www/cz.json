@@ -1,0 +1,71 @@
+{
+  "lang": "cz",
+  "langLong": "čeština",
+  "menu": ["O nás", "Naše služby", "Kontakt"],
+  "pages.homepage.code": "homepage",
+  "pages.homepage.welcomeHeading": "xxxxxxxxxxxxxxxx",
+  "pages.homepage.welcomeSubHeading": "Nabízíme odborné služby pro vaši organizaci",
+  "pages.homepage.welcomeLink": "Více o našich službách",
+  "pages.homepage.aboutHeading": "O nás",
+  "pages.homepage.aboutSubHeading": "Ing. Martin Ježek, FCCA",
+  "pages.homepage.aboutDescription": "Zakladatel Martin se po přečtení životopisu Lee laccosy rozhodl, že jednou bude krizovým manažerem. Dnes má již dvacet let praxe ve finančním řízení a několik úspěšně zvládnutých interim management projektů.",
+  "pages.homepage.ourServicesHeading": "Naše služby",
+  "pages.homepage.redBlocks": [
+    {
+      "heading":"Interim management",
+      "code":"interim",
+      "items":[
+        "první položka",
+        "druhá položka"
+      ]
+    },
+    {
+      "heading":"Odborné poradenství",
+      "code":"advisory",
+      "items":[
+        "první položka",
+        "druhá položka"
+      ]
+    }
+  ],
+  "service_1.code": "interim",
+  "service_1.welcomeHeading": "Interim management",
+  "service_1.blocks": [
+    {
+      "heading":"Substituční interim management",
+      "items":[
+        {
+          "subHeading":"cíl",
+          "description":"zajistit běžný chod firmy, dokud nebude nalezen a nenastoupí nový manažer"
+        }
+      ]
+    }
+  ],
+  "service_2.code": "advisory",
+  "service_2.welcomeHeading": "Odborné poradenství",
+  "service_2.blocks": [
+    {
+      "heading":"M/A asistence",
+      "items":[
+        {
+          "subHeading":"Pro koho je určeno",
+          "description":"zajistit běžný chod firmy, dokud nebude nalezen a nenastoupí nový manažer"
+        },
+        {
+          "subHeading":"cíl",
+          "description":"zajistit běžný chod firmy, dokud nebude nalezen a nenastoupí nový manažer"
+        },
+        {
+          "subHeading":"Obvyklý rozsah",
+          "description":"zajistit běžný chod firmy, dokud nebude nalezen a nenastoupí nový manažer"
+        }
+      ]
+    }
+  ],
+  "contact.heading": "kontakt",
+  "contact.address.name": "TURNIMAN Advisory, s.r.o.",
+  "contact.address.address1": "Korunní 2569/108, Vinohrady",
+  "contact.address.address2": "Praha 10, 101 00",
+  "contact.email": "Martin.Jezek@truniman.eu",
+  "contact.dataMail": "z48s8i"
+}

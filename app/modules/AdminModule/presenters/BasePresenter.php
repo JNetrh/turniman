@@ -24,7 +24,7 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
 
         if($this->getUser()){
             if($this->getUser()->isLoggedIn()){
-                $this->redirect('Uvod:');
+                $this->redirect(':Front:Homepage:');
             }
             if(!$this->getUser()->isLoggedIn()){
 //                $this->redirect('Sign:in');

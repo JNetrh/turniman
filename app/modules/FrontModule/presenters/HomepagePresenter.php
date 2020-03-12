@@ -21,5 +21,6 @@ class HomepagePresenter  extends BasePresenter
         $data = Json::decode($mutation->getContent());
         $this->template->data = $data;
         $this->template->lang = $this->lang;
+        bdump($mutation->getContent());
     }
 }

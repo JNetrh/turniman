@@ -19,7 +19,7 @@ class DbFactory {
 
 
 	public function __construct() {
-		$ini_array = parse_ini_file("../www/config.ini");
+		$ini_array = parse_ini_file("../config.ini");
 
 		if(isset($ini_array['username'])){
 			$this->username = $ini_array['username'];

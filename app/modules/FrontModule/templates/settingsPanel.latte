@@ -1,0 +1,28 @@
+<div class="divLanguageTranslateController">
+    <label class="labelEditableText">
+        Make text editable&nbsp;
+        <input type="checkbox" checked id="isEditable" />
+    </label>
+    <i id="iToggleTopSettings" class="iToggleTopSettings toggleNewLang fas fa-angle-down"></i>
+</div>
+<div id="openSettings" class="divBottomShadow">
+    <div class="divOuterSettings">
+        {form newLangForm class => 'form formNewLang'}
+            <div class="divNewLang">
+                {foreach $form['language']->items as $key => $label}
+                    <div style="display: flex; flex-direction: row;" >
+                        <label class="labelFlag" n:name=language:$key>
+                            <img class="imgFlag" src="{$basePath}/img/flags/{$label}.png" alt="{$label}_flag"/>
+                            {input language:$key class => 'inputnewLangForm'}
+                        </label>
+                    </div>
+                {/foreach}
+            </div>
+            <button class="buttonAddLang button-success" type="submit" >Add language</button>
+        {/form}
+        <div class="divSettingsRightPanel">
+            <a n:href="logout" class="aLogOut"><strong>Log out</strong></a>
+        </div>
+        <i class="iCloseNewLangIcon toggleNewLang fas fa-times"></i>
+    </div>
+</div>

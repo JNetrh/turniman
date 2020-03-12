@@ -51,8 +51,16 @@ class LanguageService extends BaseService
         return $this->entities->findOneBy(array('code' => $val));
     }
 
-    public function getAllLanguages() {
-        return $this->entities->findAll();
+    public function getAllLanguages($all = false) {
+        if($all) {
+            return $this->entities->findAll();
+        }
+        $sql = 'SELECT l FROM '.Language::class.' l WHERE l.display = 1';
+        $query = $this->entityManager->createQuery($sql);
+        $data = $query->getResult();
+        return $data;
+
+
     }
 
    

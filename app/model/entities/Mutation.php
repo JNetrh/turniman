@@ -69,7 +69,7 @@ class Mutation
      */
     public function getLangId()
     {
-        return $this->langId;
+        return $this->lang_id;
     }
 
     /**
@@ -77,7 +77,7 @@ class Mutation
      */
     public function setLangId($langId)
     {
-        $this->langId = $langId;
+        $this->lang_id = $langId;
     }
 
     /**

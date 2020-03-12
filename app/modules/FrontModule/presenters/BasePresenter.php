@@ -21,27 +21,37 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
 
     public function startup() {
         if(!$this->lang) {
-            $this->lang = 'cz';
+            $this->lang = 'cz'; // If no lang given, set default lang -> cz
         }
+        $allLangs = $this->languageService->getAllLanguages(); // all available languages
+        $isLang = false;
+        // If received language not found, set default lang -> cz
+        foreach ($allLangs as $language) {
+            if($language->getCode() == $this->lang) {
+                $isLang = true;
+            }
+        }
+        !$isLang ? $this->lang = 'cz' : $this->lang = $this->lang;
         parent::startup();
     }
 
     protected function beforeRender() {
-
-
         $this->template->lang = $this->lang;
         $this->template->allLanguages = $this->languageService->getAllLanguages();
         $this->template->helperFunctions =  new HelperFunctions();
-
     }
 
 
     public function handleChangeLang($lang)
     {
         $this->lang = $lang;
-
     }
 
+
+    public function handleDeleteLang($lang) {
+        $mutation = $this->mutationService->findByLang($lang);
+        $this->mutationService->delete($mutation->getId());
+    }
 
 
     public function handleSubmitLanguage ($data) {
@@ -60,12 +70,17 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
         else {
             $this->sendResponse(new JsonResponse(['success' => 'false']));
         }
-
     }
 
+    /**
+     * according to given value, changes data by passed path
+     * @param $obj
+     * @param $path
+     * @param $data
+     * @return array|mixed
+     */
     public function findAndReplace ($obj, $path, $data) {
         $objArr = json_decode($obj, true);
-        bdump($objArr, 'onjArr');
         return $this->findAndReplaceAndDo($objArr, $path, $data);
     }
 
@@ -75,8 +90,14 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
             if(!is_array($obj)) {
                 $obj = json_decode(json_encode($obj), true);
             }
-            $obj[$path[$index]] = $data;
+           /* if(strlen(trim($data)) == 0) {
+                unset( $obj[$path[$index]]);
+            }*/
+            $obj[$path[$index]] = $data; // Key found, set a new value
             return $obj;
+        }
+        if(!isset($obj[$path[$index]])) {
+            $obj[$path[$index]] = $obj[$path[$index] - 1]; // if the offset is not available, create a new one || e.g. when you are creating new service block item
         }
         $obj[$path[$index]] = $this->findAndReplaceAndDo($obj[$path[$index]], $path, $data, $index + 1);
 
@@ -100,6 +121,19 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
         return $form;
     }
 
+    protected function createComponentNewLangForm(){
+        $form = new Form;
+        $languages = $this->getLanguages();
+        $form->addRadioList('language','', $languages);
+        $form->addSubmit('send');
+
+        $this->template->newLangForm = $form;
+
+        $form->onSuccess[] = [$this, 'NewLangFormSucceeded'];
+
+        return $form;
+    }
+
 
     public function ContactFormSucceeded($form){
         $values = $form->getValues();//získání hodnot z formuláře
@@ -107,5 +141,76 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
         bdump($values);
 
         $this->redirect('Homepage:');
+    }
+
+    public function NewLangFormSucceeded($form){
+        $langCodeListNames = ['cz' => 'Čeština', 'de' => 'Deutsch', 'en' => 'English', 'fr' => 'Français', 'it' => 'Italiano', 'ru' => 'Russkij', 'sk' => 'Slovenština', 'sp' => 'español']; // languages with available flags (www/img/flags/<countryCode>.png
+        $values = $form->getValues();//získání hodnot z formuláře
+        $isLanguage = $this->languageService->findByLang($values['language']);
+
+        if($isLanguage) {
+            $newLanguage = $isLanguage;
+        }
+        else {
+            $newLanguage = $this->languageService->newEntity();
+        }
+
+        $newLanguage->setCode($values['language']);
+        $newLanguage->setName($langCodeListNames[$values['language']]);
+        $newLanguage->setImg($values['language'].'.png');
+        $newLanguage->setPosition(0);
+        $newLanguage->setDisplay(1);
+
+        // UNCOMMENT
+        $this->languageService->saveEntity($newLanguage);
+
+        $languageTemplate = $this->mutationService->findByLang('xx');
+
+        $isAlreadyMutation = $this->mutationService->findByLang($values['language']);
+
+        if($isAlreadyMutation) {
+            $newMutation = $isAlreadyMutation;
+        }
+        else {
+            $newMutation = $this->mutationService->newEntity();
+            $newMutation->setContent($languageTemplate->getContent());
+            $addingLanguage = $this->languageService->findByLang($values['language']);
+//            bdump($addingLanguage,'$addingLanguage');
+//            bdump($addingLanguage->getId(),'$addingLanguage->getId()');
+            $newMutation->setLangId($addingLanguage->getId());
+        }
+
+        $newMutation->setDeprecated(0);
+
+//        bdump($newMutation,'$newMutation');
+
+
+        // UNCOMMENT
+        $this->mutationService->saveEntity($newMutation);
+
+        $this->redirect('Homepage:');
+    }
+
+    /**
+     * @return array of languages that has not a translation yet according to the Db
+     */
+    private function getLanguages() {
+        $allLangs = $this->languageService->getAllLanguages(); // all available languages
+        $langCodeListSimple = ['cz', 'de', 'en', 'fr', 'it', 'ru', 'sk', 'sp']; // languages with available flags (www/img/flags/<countryCode>.png
+        $langCodeListNames = ['Čeština', 'Deutsch', 'English', 'Français', 'Italiano', 'Russkij', 'Slovenština', 'Español']; // languages with available flags (www/img/flags/<countryCode>.png
+        $langsToDisplay = array();
+        foreach ($langCodeListSimple as $lang){
+            $langsToDisplay[$lang] = $lang;
+        }
+        foreach ($allLangs as $lang) {
+            $langToDel = $lang->getCode();
+            unset($langsToDisplay[$langToDel]);
+        }
+        return $langsToDisplay;
+    }
+
+    public function actionLogout() {
+        $this->getUser()->logout();
+        $this->redirect(":Front:Homepage:");
     }
 }

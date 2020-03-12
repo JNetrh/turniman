@@ -45,13 +45,18 @@ class MutationService extends BaseService
 
     public function delete($id){
         $toDel = $this->findById($id);
+        bdump($toDel);
         $this->entityManager->remove($toDel);
         $this->entityManager->flush();
+        $this->languageService->delete($toDel->getLangId());
     }
 
 
     public function findByLang($val) {
         $languageEntity = $this->languageService->findByLang($val);
+        if(!$languageEntity) {
+            $languageEntity = $this->languageService->findByLang('xx');
+        }
         return $this->entities->findOneBy(array('lang_id' => $languageEntity->getId()));
     }
 

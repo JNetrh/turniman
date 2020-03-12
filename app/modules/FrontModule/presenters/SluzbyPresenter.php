@@ -16,13 +16,6 @@ class SluzbyPresenter  extends BasePresenter
         $this->mutationService = $mutationService;
     }
 
-    public function renderDefault(){
-        $mutation =$this->mutationService->findByLang($this->lang);
-        $data = Json::decode($mutation->getContent());
-        $this->template->data = $data;
-        $this->template->lang = $this->lang;
-    }
-
     public function renderInterim() {
         $mutation =$this->mutationService->findByLang($this->lang);
         $data = Json::decode($mutation->getContent());

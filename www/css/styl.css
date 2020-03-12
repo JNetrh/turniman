@@ -118,6 +118,29 @@ label.labelInput {
     color: #4C4C4C;
     font-size: 0.8em;
 }
+label.labelFlag {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+label.labelEditableText {
+    color: #E8E7E8;
+    font-size: 0.8em;
+}
+
+i.iCloseNewLangIcon {
+    margin: 0 0 0 auto;
+    cursor: pointer;
+    padding-bottom: 1em;
+}
+
+i.iToggleTopSettings {
+    position: relative;
+    align-self: center;
+    cursor: pointer;
+    padding-top: 1em;
+    top: 0px;
+}
 
 /*----------------------------------------------------------------------------*/
 /*HTML, BODY: */
@@ -145,10 +168,7 @@ div.divNav {
     overflow: hidden;
     height: 130px;
     align-items: center;
-}
-
-div.divLogo {
-    float: left;
+    z-index: 2001;
 }
 
 div.divMenu {
@@ -191,23 +211,26 @@ div.divLangListItem {
 }
 
 div.divCover {
-    z-index: -1001;
-    position: relative;
-    top: -130px;
+    /* z-index: 0; */
+    /* position: relative; */
+    /* top: -130px; */
     margin-bottom: -130px;
     display: flex;
     height: 700px;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 div.divCoverText {
     margin: 0 auto;
     width: 100%;
     text-align: center;
-    z-index: 2001;
+    /* z-index: 2001; */
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    top: -130px;
 }
 div.divBlock {
     margin: 0 auto;
@@ -293,7 +316,7 @@ div.divFormField {
 }
 
 div.divLanguageTranslateController {
-    position: absolute;
+    position: fixed;
     width: 200px;
     min-height: 100px;
     top: 0;
@@ -301,12 +324,41 @@ div.divLanguageTranslateController {
     background-color: #26547C;
     border-radius: 0 0 15px 15px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     padding: 10px;
     justify-content: center;
     color: #E8E7E8;
+    overflow: hidden;
 }
 
+div.divNewLang {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 1024px;
+}
+div.divOuterSettings {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding-top: 3em;
+    display: flex;
+}
+
+div.divSettingsRightPanel {
+    display: flex;
+    width: 40%;
+    padding: 0 1em 0 0;
+}
+
+div.divBottomShadow {
+    display: none;
+    background-color: #FFFFFF;
+    -webkit-box-shadow: inset 0px -74px 38px -80px rgba(38,84,124,0.5);
+    -moz-box-shadow: inset 0px -74px 38px -80px rgba(38,84,124,0.5);
+    box-shadow: inset 0px -74px 38px -80px rgba(38,84,124,0.5);
+}
 /*----------------------------------------------------------------------------*/
 /*WRITINGS: */
 h1 {
@@ -360,7 +412,7 @@ h3.h3Sluzby {
 
 p {
     font-family: 'National_Light', 'Lucida Sans Unicode', sans-serif !important;
-    font-size: 20px;
+    font-size: 1em;
     color: #36383A;
     padding: 0;
     margin: 10px 0 0 0;
@@ -427,11 +479,21 @@ img {
     margin: 0;
 }
 
+img.imgLogo a{
+    display: block;
+}
+
+img.imgLogo {
+    height: 130px;
+}
+
 img.imgCover {
     position: absolute;
-    width: 101%;
+    width: 100%;
     left: -2px;
     height: auto;
+    z-index: -1001;
+    top: 0px;
 }
 
 img.imgFlag {
@@ -468,7 +530,7 @@ a.aMenu, a.aMenuActive {
     font-family: 'National_Bold', 'Lucida Sans Unicode', sans-serif !important;
     display: block;
     color: #E8E7E8;
-    font-size: 20px;
+    font-size: 1em;
     padding: 5px 10px;
     text-decoration: none;
     position: relative;
@@ -493,6 +555,11 @@ a.aMenu:hover:after, a.aMenuActive::after {
 a.aLang {
     text-decoration: none;
     padding-left: 15px;
+    font-size: 0.8em;
+}
+
+a.aLang:hover {
+    text-decoration: underline;
 }
 
 a.aRightless, a.aRightless:hover {
@@ -502,6 +569,10 @@ a.aRightless, a.aRightless:hover {
     color: inherit;
     display: inherit;
     text-decoration: inherit;
+}
+
+a.aLogOut {
+    margin: 0 0 0 auto;
 }
 
 a img {
@@ -523,7 +594,7 @@ ul {
 
 li {
     font-family: 'National_Bold', 'Lucida Sans Unicode', sans-serif !important;
-    font-size: 20px;
+    font-size: 1em;
     color: #171717;
     padding: 10px 0 0 0;
 }
@@ -558,6 +629,13 @@ ul.ulMenu li ul.ulLang li a {
 
 .formContact {
 
+}
+
+.formNewLang {
+    width: 60%;
+    padding: 0 1em 2em 0;
+    display: flex;
+    flex-direction: column;
 }
 
 div.divFormField label {
@@ -602,6 +680,10 @@ button.buttonForm {
     text-decoration: underline;
 }
 
+button.buttonAddLang {
+    margin-top: 2em;
+}
+
 button.buttonForm:hover {
     text-decoration: none;
 }
@@ -611,7 +693,7 @@ button.buttonForm:hover {
 .button-warning,
 .button-secondary {
     color: #FFF;
-    font-size: 20px;
+    font-size: 1em;
     border-radius: 0.7em;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
     padding: 0.08em 0.5em;
@@ -655,6 +737,17 @@ button.buttonForm:hover {
     color: rgb(66, 184, 221);
 }
 
+.addNewServiceBlock {
+    margin: 2em auto;
+    text-align: center;
+    display: flex;
+    padding: 0 15%;
+}
+
+.buttonAddNewLang {
+    margin: 0 auto;
+}
+
 .editableTextarea {
     clear: both;
 }
@@ -686,3 +779,72 @@ nav.navigation {
     z-index: 1001;
 }
 
+
+
+/* Large desktops and laptops */
+@media (min-width: 1200px) {
+    body, p, ul, ol, ul li, ol li, table, table td, div, a, a:hover, a:visited, input, textarea, select, label
+    {
+        font-size: 20px;
+    }
+
+}
+
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+    body, p, ul, ol, ul li, ol li, table, table td, div, a, a:hover, a:visited, input, textarea, select, label
+    {
+        font-size: 20px;
+    }
+    div.divCover {
+        height: 400px;
+    }
+    img.imgCover {
+        width: 120%;
+    }
+
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+    body, p, ul, ol, ul li, ol li, table, table td, div, a, a:hover, a:visited, input, textarea, select, label
+    {
+        font-size: 19px;
+    }
+    div.divCover {
+        height: 400px;
+    }
+    img.imgCover {
+        width: 135%;
+    }
+
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+    body, p, ul, ol, ul li, ol li, table, table td, div, a, a:hover, a:visited, input, textarea, select, label
+    {
+        font-size: 16px;
+    }
+    div.divCover {
+        height: 320px;
+    }
+    img.imgCover {
+        width: 150%;
+    }
+
+}
+
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+    body, p, ul, ol, ul li, ol li, table, table td, div, a, a:hover, a:visited, input, textarea, select, label
+    {
+        font-size: 12px;
+    }
+    div.divCover {
+        height: 320px;
+    }
+    img.imgCover {
+        width: 200%;
+    }
+}

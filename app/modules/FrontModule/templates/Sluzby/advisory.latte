@@ -5,17 +5,22 @@
 {block menuONas}{$data->menu[1]}{/block}
 {block menuKontakt}{$data->menu[2]}{/block}
 {block content}
-    <div class="divCover">
-        <img class="imgCover" src="{$basePath}/img/cover.jpg" alt="cover" />
-        <div class="divCoverText">
-            <h1 class="h1Cover">Odborné poradenství</h1>
-        </div>
-    </div>
+    {include 'service.latte' serviceName => 'service_2', data => $data, helperFunctions => $helperFunctions}
 {/block}
 
 {block script}
     <script type="text/javascript">
         drzAktivni('sluzby');
+        $(".addNewServiceBlockItem").click(e => {
+            this.addRowToServiceBlock(e, {$lang}, () => {
+                this.setEditable();
+            });
+        });
+        $(".addNewServiceBlock").click(e => {
+            this.addServiceBlock(e, {$lang}, () => {
+                this.setEditable();
+            });
+        });
     </script>
 {/block}
 
