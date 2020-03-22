@@ -1,6 +1,15 @@
 
 h1.h1Intro {
+    margin: 0;
     color: #000000;
+}
+
+h2.h2SubHeading {
+    font-family: 'National_Semibold', 'Lucida Sans Unicode', sans-serif !important;
+    margin: 0;
+    font-size: 2rem;
+    padding: 0rem 1rem 1.5rem 0rem ;
+    color: #4C4C4C;
 }
 
 h3.h3Sluzby {

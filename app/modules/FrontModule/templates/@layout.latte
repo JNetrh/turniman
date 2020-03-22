@@ -60,6 +60,12 @@
 
     <nav class="navigation">
         <div class="divNav">
+            <a class="aDivLogo" n:href="Homepage: ">
+                <div class="divLogo">
+                    <span class="spanLogo">turniman</span>
+                    <span class="spanLogo">advisory</span>
+                </div>
+            </a>
             <a class="aLogo" n:href="Homepage: ">
                 <img class="imgLogo" src="{$basePath}/img/logo.png" alt="logo Turniman" />
             </a>
@@ -101,6 +107,11 @@
             <div class="divBlockForm">
                 <div class="divFormLeft">
                     <h2 class="h2Kontakt"  lang="{$lang}">{$data->contact_heading}</h2>
+                    <p style="min-height: 1.5rem;">
+                        <a class="aLinkedIn" href="{$data->contact_managing_director_linkedIn|noescape}" target="_blank">
+                            <strong lang="{$lang}">{$data->contact_managing_director|noescape}</strong>
+                        </a>
+                    </p>
                     <p>
                         {$data->contact_address_name} <br />
                         {$data->contact_address_address_1_row1} <br />

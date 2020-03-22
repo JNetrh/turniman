@@ -1,22 +1,20 @@
 {
-  "lang": "en",
+  "lang": "cs",
   "langLong": "čeština",
-  "menu": ["Naše služby", "O nás", "Kontakt"],
+  "menu": ["Naše služby", "Partneři", "Kontakt"],
   "page_homepage_code": "homepage",
-  "page_homepage_welcomeHeading": "Firma s dlouholetou praxí ve finančním a krizovém řízení nebo poradenství",
-  "page_homepage_welcomeSubHeading": "Nabízíme odborné služby pro vaši organizaci",
+  "page_homepage_welcomeHeading": "TURNIMAN Advisory, s.r.o.",
+  "page_homepage_welcomeSubHeading": "Je poradenská firma zaměřená na&nbsp;interim management, krizové řízení a&nbsp;restrukturalizace&nbsp;firem",
   "page_homepage_welcomeLink": "Více o našich službách",
   "page_homepage_aboutHeading": "O nás",
-  "page_homepage_aboutSubHeading": "Jednatel společnosti: Martin Ježek",
-  "page_homepage_aboutDescription": "TURNIMAN Advisory, s.r.o. je poradenská firma zaměřená na&nbsp;interim management, krizové řízení a&nbsp;restrukturalizace firem.",
-  "page_homepage_subjectsHeading": "Obory",
-  "page_homepage_subjectsSubHeading": "Při&nbsp;realizaci projektů spolupracujeme s&nbsp;prověřenými partnery v&nbsp;oborech",
+  "page_homepage_subjectsHeading": "Partneři",
+  "page_homepage_subjectsSubHeading": "Nespoléháme jen na&nbsp;své&nbsp;zkušenosti. Spolupracujeme s&nbsp;prověřenými partnery&nbsp;v&nbsp;oborech.",
   "page_homepage_subjects": [
     "Daňoví a účetní poradci",
-    "M/A poradci",
+    "Transakční poradci",
     "Právní poradci",
-    "Právní poradci",
-    "Interim manažeři",
+    "Insolvenční správci",
+    "Specializovaní interim manažeři/konzultanti",
     "Znalecké ústavy"
   ],
   "page_homepage_ourServicesHeading": "Naše služby",
@@ -88,7 +86,7 @@
         "items":[
           {
             "subHeading":"Pro koho to je určeno: ",
-            "description":"insolvenční správci"
+            "description":"insolvenční správci firem"
           },
           {
             "subHeading":"Cíl: ",
@@ -120,11 +118,11 @@
         "items":[
           {
             "subHeading":"Pro koho je určeno:",
-            "description":"věřitelé nebo vlastníci společnosti, která není schopna plnit své finanční závazky"
+            "description":"věřitelé nebo&nbsp;vlastníci společnosti, která je&nbsp;schopna vydělat na&nbsp;udržení provozu ale&nbsp;nedokáže plnit své&nbsp;finanční&nbsp;závazky"
           },
           {
             "subHeading":"Cíl:",
-            "description":"ve spolupráci s&nbsp;odbornými partnery ozdravit bilanci firmy a&nbsp;provozně&nbsp;ji restrukturalizovat tak, aby se&nbsp;mohla rozvíjet"
+            "description":"ve spolupráci s&nbsp;odbornými partnery ozdravit bilanci firmy tak, aby se&nbsp;mohla rozvíjet"
           }
         ]
       }
@@ -133,6 +131,8 @@
 
   "contact_heading": "Kontakt",
   "contact_sendButton": "Odeslat",
+  "contact_managing_director": "Jednatel společnosti: Martin Ježek",
+  "contact_managing_director_linkedIn": "https://www.linkedin.com/in/martin-jezek-9818646/",
   "contact_address_name": "TURNIMAN Advisory, s.r.o.",
   "contact_address_address_1_row1": "Korunní 2569/108, Vinohrady",
   "contact_address_address_1_row2": "101 00 Praha 10",

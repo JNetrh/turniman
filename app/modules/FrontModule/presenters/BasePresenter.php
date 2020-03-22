@@ -45,6 +45,7 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
     public function handleChangeLang($lang)
     {
         $this->lang = $lang;
+        $this->redirect('Homepage:');
     }
 
 

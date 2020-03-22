@@ -142,6 +142,19 @@ i.iToggleTopSettings {
     top: 0px;
 }
 
+span.spanLogo {
+    font-family: 'National_Semibold', 'Lucida Sans Unicode', sans-serif !important;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    color: #FD1A1A;
+    padding: 0 2rem 0 0;
+}
+
+div.divLogo:hover span.spanLogo {
+    color: #4C4C4C;
+}
+
+
 /*----------------------------------------------------------------------------*/
 /*HTML, BODY: */
 body{
@@ -177,6 +190,11 @@ div.divMenu {
     margin: 0 0 0 auto;
     display: flex;
     align-items: center;
+}
+
+div.divLogo {
+    display: flex;
+    flex-direction: column;
 }
 
 div.divLang {
@@ -412,6 +430,11 @@ a:hover {
 
 a.aLogo {
     margin: 0;
+}
+
+a.aDivLogo {
+    margin: 0;
+    text-decoration: none;
 }
 
 a.aMenu, a.aMenuActive {
@@ -715,6 +738,9 @@ nav.navigation {
     {
         font-size: 19px;
     }
+    span.spanLogo {
+        font-size: 1rem;
+    }
     img.imgCover {
         width: 135%;
     }
@@ -740,6 +766,9 @@ nav.navigation {
     {
         font-size: 16px;
     }
+    span.spanLogo {
+        font-size: 1rem;
+    }
     img.imgCover {
         width: 150%;
     }
@@ -764,6 +793,11 @@ nav.navigation {
     body, p, ul, ol, ul li, ol li, table, table td, div, a, a:hover, a:visited, input, textarea, select, label
     {
         font-size: 12px;
+    }
+    span.spanLogo {
+        font-size: 1rem;
+        padding: 0 0.25rem 0 0;
+        display: none;
     }
     img.imgCover {
         width: 200%;
