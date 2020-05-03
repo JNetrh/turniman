@@ -105,7 +105,7 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
 
         $mail = new Message;
         $mail->setFrom($values->name.' <'.$values->email.'>')
-            ->addTo('netrh.j@gmail.com')
+            ->addTo('Martin.Jezek.@turniman.eu')
             ->setHtmlBody($latte->renderToString('templates/email.latte', $params));
 
 
