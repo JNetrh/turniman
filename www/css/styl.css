@@ -15,6 +15,7 @@
     url('../font/National-Semibold.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 @font-face {
     font-family: 'National_Regular';
@@ -26,6 +27,7 @@
     url('../font/National-Regular.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 @font-face {
     font-family: 'National_Medium';
@@ -37,6 +39,7 @@
     url('../font/National-Medium.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 @font-face {
     font-family: 'National_LightItalic';
@@ -48,6 +51,7 @@
     url('../font/National-LightItalic.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 @font-face {
     font-family: 'National_Light';
@@ -59,6 +63,7 @@
     url('../font/National-Light.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 @font-face {
     font-family: 'National_Extrabold';
@@ -70,6 +75,7 @@
     url('../font/National-Extrabold.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 @font-face {
     font-family: 'National_Bold';
@@ -81,6 +87,7 @@
     url('../font/National-Bold.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
 

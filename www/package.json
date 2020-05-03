@@ -6,9 +6,7 @@
   "scripts": {
     "test": "echo no test yet"
   },
-  "author": "netrh,j@gmail.com",
+  "author": "netrh.j@gmail.com",
   "license": "MIT",
-  "dependencies": {
-    "jquery-jeditable": "^2.0.7"
-  }
+  "dependencies": {}
 }
