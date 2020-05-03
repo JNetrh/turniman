@@ -8,5 +8,7 @@
   },
   "author": "netrh.j@gmail.com",
   "license": "MIT",
-  "dependencies": {}
+  "dependencies": {
+    "jquery": "^3.5.0"
+  }
 }
