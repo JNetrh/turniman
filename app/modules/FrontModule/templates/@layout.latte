@@ -47,8 +47,8 @@
 
         {*https://support.google.com/webmasters/answer/189077?hl=cs*}
         <script src="{$basePath}/node_modules/jquery/dist/jquery.min.js" type="text/javascript"></script>
-        <script src="{$basePath}/node_modules/jquery-jeditable/dist/jquery.jeditable.min.js" type="text/javascript"></script>
-        <script src="{$basePath}/node_modules/jquery-jeditable/src/jquery.jeditable.autogrow.js" type="text/javascript"></script>
+{*        <script src="{$basePath}/node_modules/jquery-jeditable/dist/jquery.jeditable.min.js" type="text/javascript"></script>*}
+{*        <script src="{$basePath}/node_modules/jquery-jeditable/src/jquery.jeditable.autogrow.js" type="text/javascript"></script>*}
         <script src="{$basePath}/js/nette.ajax.js" type="text/javascript"></script>
         <script type="text/javascript">
             window.handleSubmitLanguageUrl = {link submitLanguage!};
@@ -71,8 +71,8 @@
             </a>
             <div class="divMenu">
                 <ul class="ulMenu">
-                    <li><a id="onas" class="aMenu" n:href="Homepage:default# " lang="{$lang}">{ifset menuONas}{include menuONas}{/ifset}</a></li>
                     <li><a id="sluzby" class="aMenu" n:href="Homepage:default#blockSluzby"  lang="{$lang}">{ifset menuSluzby}{include menuSluzby}{/ifset}</a></li>
+                    <li><a id="partneri" class="aMenu" n:href="Homepage:default# " lang="{$lang}">{ifset menuONas}{include menuONas}{/ifset}</a></li>
                     <li><a id="kontakt" class="aMenu" n:href="Homepage:default#blockKontakt"   lang="{$lang}">{ifset menuKontakt}{include menuKontakt}{/ifset}</a></li>
                     <li>
                         <ul class="ulLang">
@@ -188,9 +188,9 @@
                 }, 600);
             });
 
-            $("#onas").click(function() {
+            $("#partneri").click(function() {
                 $('html, body').animate({
-                    scrollTop: $("#blockONas").offset().top
+                    scrollTop: $("#blockPartneri").offset().top
                 }, 600);
             });
         </script>
