@@ -4,43 +4,42 @@
   "menu": ["Naše služby", "Partneři", "Kontakt"],
   "page_homepage_code": "homepage",
   "page_homepage_welcomeHeading": "TURNIMAN Advisory, s.r.o.",
-  "page_homepage_welcomeSubHeading": "Je poradenská firma zaměřená na&nbsp;interim management, krizové řízení a&nbsp;restrukturalizace&nbsp;firem",
+  "page_homepage_welcomeSubHeading": "Specialisté na&nbsp;záchranu a&nbsp;stabilizaci<br />malých a&nbsp;středních podniků",
   "page_homepage_welcomeLink": "Více o našich službách",
   "page_homepage_aboutHeading": "O nás",
   "page_homepage_subjectsHeading": "Partneři",
   "page_homepage_subjectsSubHeading": "Nespoléháme jen na&nbsp;své&nbsp;zkušenosti. Spolupracujeme s&nbsp;prověřenými partnery&nbsp;v&nbsp;oborech.",
   "page_homepage_subjects": [
+    "Právní poradci",
     "Daňoví a účetní poradci",
     "Transakční poradci",
-    "Právní poradci",
+    "Interim manažeři",
     "Insolvenční správci",
-    "Specializovaní interim manažeři/konzultanti",
     "Znalecké ústavy"
   ],
   "page_homepage_ourServicesHeading": "Naše služby",
   "page_homepage_redBlocks": [
     {
-      "heading":"Interim management",
+      "heading":"Restrukturalizace",
       "code":"interim",
       "items":[
-        "Substituční interim management",
-        "Postakviziční transformace",
-        "Krizový management",
+        "Restrukturalizace společnosti",
+        "Krizové řízení",
         "Asistence insolvenčním správcům"
       ]
     },
     {
-      "heading":"Odborné poradenství",
+      "heading":"Akviziční poradenství",
       "code":"advisory",
       "items":[
-        "M/A asistence",
-        "Restrukturalizace společnosti"
+        "M&A asistence",
+        "Postakviziční transformace"
       ]
     }
   ],
   "service_1": {
     "code": "interim",
-    "welcomeHeading": "Interim management",
+    "welcomeHeading": "Restrukturalizace",
     "blocks": [
       {
         "heading":"Substituční interim management",
@@ -98,7 +97,7 @@
   },
   "service_2": {
     "code": "advisory",
-    "welcomeHeading": "Odborné poradenství",
+    "welcomeHeading": "Akviziční poradenství",
     "blocks": [
       {
         "heading":"M/A asistence",
@@ -141,5 +140,5 @@
   "contact_dataMail": "Datová schránka: z2itund",
   "contact_dic": "DIČ: CZ07825820",
   "keyWords": "interim, poradenství, management, společnost, poradci, restrukturalizace, postakvizice, firma, finance, podnik, asistence, advisory, akvizice, transformace, odborné, Martin, Ježek ",
-  "description": "TURNIMAN Advisory s.r.o. je firma která se zabývá interim managementem a odborným poradenstvím pro firmy a společnosti, které se dostali do jakých koliv potíží. Ať jim schází klíčový manažer nebo potřebují zválnout akvizice. "
+  "description": "TURNIMAN Advisory s.r.o. je firma která se zabývá interim managementem a odborným poradenstvím pro firmy a společnosti, které se dostali do jakých koliv potíží. Ať jim schází klíčový manažer nebo potřebují zvládnout akvizice. "
 }

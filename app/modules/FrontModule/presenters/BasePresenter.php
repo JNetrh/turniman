@@ -7,6 +7,10 @@ use Nette\Application\UI\Form;
 use Nette\Utils\Json;
 use Nette\Application\Responses\JsonResponse;
 use App\Model\HelperFunctions;
+use Nette\Mail\SendmailMailer;
+use Latte\Engine;
+use Nette\Mail\Message;
+
 
 abstract class BasePresenter extends Nette\Application\UI\Presenter
 {
@@ -73,41 +77,6 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
         }
     }
 
-    /**
-     * according to given value, changes data by passed path
-     * @param $obj
-     * @param $path
-     * @param $data
-     * @return array|mixed
-     * for now unnused functionality. Functional for previous lang.json file format
-     */
-//    public function findAndReplace ($obj, $path, $data) {
-//        $objArr = json_decode($obj, true);
-//        return $this->findAndReplaceAndDo($objArr, $path, $data);
-//    }
-//
-//
-//    public function findAndReplaceAndDo ($obj, $path, $data, $index = 0) {
-//        if($index + 1 == sizeof($path)) {
-//            if(!is_array($obj)) {
-//                $obj = json_decode(json_encode($obj), true);
-//            }
-//           /* if(strlen(trim($data)) == 0) {
-//                unset( $obj[$path[$index]]);
-//            }*/
-//            $obj[$path[$index]] = $data; // Key found, set a new value
-//            return $obj;
-//        }
-//        if(!isset($obj[$path[$index]])) {
-//            $obj[$path[$index]] = $obj[$path[$index] - 1]; // if the offset is not available, create a new one || e.g. when you are creating new service block item
-//        }
-//        $obj[$path[$index]] = $this->findAndReplaceAndDo($obj[$path[$index]], $path, $data, $index + 1);
-//
-//        return $obj;
-//    }
-
-
-
     protected function createComponentContactForm(){
         $form = new Form;
         $form->addText('name')->setRequired();
@@ -126,8 +95,23 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
 
     public function ContactFormSucceeded($form){
         $values = $form->getValues();//získání hodnot z formuláře
+        $latte = new Engine;
+        $params = [
+            'email' => $values->email,
+            'name' => $values->name,
+            'subject' => $values->subject,
+            'message' => $values->message,
+        ];
 
-        bdump($values);
+        $mail = new Message;
+        $mail->setFrom($values->name.' <'.$values->email.'>')
+            ->addTo('netrh.j@gmail.com')
+            ->setHtmlBody($latte->renderToString('templates/email.latte', $params));
+
+
+
+        $mailer = new SendmailMailer;
+        $mailer->send($mail);
 
         $this->redirect('Homepage:');
     }

@@ -403,6 +403,11 @@ img.imgFlag {
     padding: 0;
 }
 
+img.imgLinkedin {
+    max-height: 3rem;
+    margin-left: -0.6rem;
+}
+
 .caretDown {
     cursor: pointer;
 }

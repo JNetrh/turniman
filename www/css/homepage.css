@@ -37,7 +37,7 @@ p.pSluzby {
 }
 
 p.trimWidth {
-    max-width: 20rem
+    max-width: 10rem
 }
 
 a.aMore {
@@ -55,10 +55,16 @@ a.aPSluzby:last-child p {
 
 div.divBlock_5 {
     width: 45%;
+    display: inline-block;
 }
 
-div.divWrapObout {
+div.divBlock_100 {
+    width: 100%;
+}
+
+div.divWrapAbout {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     flex-direction: row;
     width: 100%;

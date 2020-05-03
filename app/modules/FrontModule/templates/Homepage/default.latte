@@ -14,34 +14,7 @@
         <div class="divBlock">
             <div>
                 <h2 class="h2SubHeading" lang="{$lang}">{$data->page_homepage_welcomeSubHeading|noescape}</h2>
-                <p class="pMore"><a class="aMore" id="sluzbyButton" href="#" lang="{$lang}">{$data->page_homepage_welcomeLink|noescape}</a></p>
-            </div>
-        </div>
-    </div>
-    <div id="blockONas" class="divBlock">
-        <div class="divWrapObout">
-            <div class="divBlock_5">
-                <h2 lang="{$lang}">{$data->page_homepage_subjectsHeading|noescape}</h2>
-                <p style="min-height: 1.5rem;" />
-                <p className="trimWidth" lang="{$lang}">{$data->page_homepage_subjectsSubHeading|noescape}</p>
-                {var $arrLength = count($data->page_homepage_subjects)}
-                {var $half = $arrLength / 2}
-                <div class="divWrapObout">
-                    <div class="divBlock_5">
-                        <ul class="ulSluzba">
-                            <li n:for="$i = 0; $i < $half; $i++" >
-                                {$data->page_homepage_subjects[$i]|noescape}
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="divBlock_5">
-                        <ul class="ulSluzba">
-                            <li n:for="$i = $half + 1; $i < $arrLength; $i++" >
-                                {$data->page_homepage_subjects[$i]|noescape}
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+{*                <p class="pMore"><a class="aMore" id="sluzbyButton" href="#" lang="{$lang}">{$data->page_homepage_welcomeLink|noescape}</a></p>*}
             </div>
         </div>
     </div>
@@ -65,6 +38,35 @@
                             </a>
                         {/if}
                     {/foreach}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="blockONas" class="divBlock">
+        <div class="divWrapAbout">
+            <div class="divBlock_100">
+               <h2 lang="{$lang}">{$data->page_homepage_subjectsHeading|noescape}</h2>
+               <p style="min-height: 1.5rem;" />
+               <p className="trimWidth" lang="{$lang}">{$data->page_homepage_subjectsSubHeading|noescape}</p>
+           </div>
+            {var $arrLength = count($data->page_homepage_subjects)}
+            {var $half = $arrLength / 2}
+            <div class="divBlock_5">
+                <div class="divWrapObout">
+                    <ul class="ulSluzba">
+                        <li n:for="$i = 0; $i < $half; $i++" >
+                            {$data->page_homepage_subjects[$i]|noescape}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="divBlock_5">
+                <div class="divWrapObout">
+                    <ul class="ulSluzba">
+                        <li n:for="$i = $half; $i < $arrLength; $i++" >
+                            {$data->page_homepage_subjects[$i]|noescape}
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>

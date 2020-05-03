@@ -1,6 +1,7 @@
 
 h1.h1Cover {
-    color: #E8E7E8;
+    /*color: #E8E7E8;*/
+    color: #FD1A1A;
 }
 
 h2.h2TypSluzby {
@@ -20,6 +21,14 @@ div.divCover {
     display: flex;
     overflow: hidden;
     z-index: -1001;
+}
+
+div.h1CoverWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 4rem;
+    background-color: transparent;
 }
 
 div.divBlockLeft_4 {
@@ -48,12 +57,12 @@ div.divCoverText {
 
 img.imgCover {
     position: relative;
-    width: 100%;
-    left: -2px;
-    right: -2px;
-    height: auto;
+    /*width: 100%;*/
+    left: -40px;
+    /*right: -2px;*/
+    /*height: auto;*/
     /*z-index: -1001;*/
-    top: 0px;
+    top: -40px;
 }
 
 
