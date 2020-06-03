@@ -167,7 +167,7 @@ div.divLogo:hover span.spanLogo {
 body{
     margin: 0;
     padding: 0;
-    background-image: repeating-linear-gradient(90deg, #E8E7E8, #E8E7E8 1px, #FFFFFF 1px, #FFFFFF 205px);
+    /*background-image: repeating-linear-gradient(90deg, #E8E7E8, #E8E7E8 1px, #FFFFFF 1px, #FFFFFF 205px);*/
 }
 
 
@@ -312,6 +312,15 @@ div.divBottomShadow {
     -moz-box-shadow: inset 0px -74px 38px -80px rgba(38,84,124,0.5);
     box-shadow: inset 0px -74px 38px -80px rgba(38,84,124,0.5);
 }
+
+div.divBack {
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 /*----------------------------------------------------------------------------*/
 /*WRITINGS: */
 h1 {

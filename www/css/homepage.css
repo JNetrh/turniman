@@ -44,6 +44,20 @@ a.aMore {
     font-family: 'National_Regular', 'Lucida Sans Unicode', sans-serif !important;
 }
 
+a.aAdvisor {
+    font-family: 'National_Regular', 'Lucida Sans Unicode', sans-serif !important;
+    text-decoration: none;
+    color: #FD1A1A;
+    padding-bottom: 4px;
+
+}
+a.aAdvisor:hover {
+    text-decoration: none;
+    padding-bottom: 2px;
+    border-bottom: 2px solid #FD1A1A;
+
+}
+
 a.aH3Sluzby, a.aPSluzby, a.aPSluzby:hover, a.aH3Sluzby:hover {
     font-family: 'National_Regular', 'Lucida Sans Unicode', sans-serif !important;
     text-decoration: none;

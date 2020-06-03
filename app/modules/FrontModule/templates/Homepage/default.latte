@@ -42,7 +42,7 @@
             </div>
         </div>
     </div>
-    <div id="blockONas" class="divBlock">
+    <div id="blockPartneri" class="divBlock">
         <div class="divWrapAbout">
             <div class="divBlock_100">
                <h2 lang="{$lang}">{$data->page_homepage_subjectsHeading|noescape}</h2>
@@ -55,7 +55,8 @@
                 <div class="divWrapObout">
                     <ul class="ulSluzba">
                         <li n:for="$i = 0; $i < $half; $i++" >
-                            {$data->page_homepage_subjects[$i]|noescape}
+                            <span n:if="$data->page_homepage_subjects[$i]->link == null" >{$data->page_homepage_subjects[$i]->label|noescape}</span>
+                            <a class="aAdvisor" target="_blank" n:if="$data->page_homepage_subjects[$i]->link != null" href="{$data->page_homepage_subjects[$i]->link}" >{$data->page_homepage_subjects[$i]->label|noescape}</a>
                         </li>
                     </ul>
                 </div>
@@ -64,7 +65,8 @@
                 <div class="divWrapObout">
                     <ul class="ulSluzba">
                         <li n:for="$i = $half; $i < $arrLength; $i++" >
-                            {$data->page_homepage_subjects[$i]|noescape}
+                            <span n:if="$data->page_homepage_subjects[$i]->link == null" >{$data->page_homepage_subjects[$i]->label|noescape}</span>
+                            <a class="aAdvisor" target="_blank" n:if="$data->page_homepage_subjects[$i]->link != null" href="{$data->page_homepage_subjects[$i]->link}" >{$data->page_homepage_subjects[$i]->label|noescape}</a>
                         </li>
                     </ul>
                 </div>

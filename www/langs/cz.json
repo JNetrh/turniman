@@ -10,12 +10,30 @@
   "page_homepage_subjectsHeading": "Partneři",
   "page_homepage_subjectsSubHeading": "Nespoléháme jen na&nbsp;své&nbsp;zkušenosti. Spolupracujeme s&nbsp;prověřenými partnery&nbsp;v&nbsp;oborech.",
   "page_homepage_subjects": [
-    "Právní poradci",
-    "Daňoví a účetní poradci",
-    "Transakční poradci",
-    "Interim manažeři",
-    "Insolvenční správci",
-    "Znalecké ústavy"
+    {
+      "label": "Právní poradci",
+      "link":"https://www.samak.cz/"
+    },
+    {
+      "label": "Daňoví a účetní poradci",
+      "link": "https://www.samak.cz/"
+    },
+    {
+      "label": "M&A poradci",
+      "link": "https://www.samak.cz/"
+    },
+    {
+      "label": "Interim manažeři",
+      "link": "https://www.financnimanager.cz/"
+    },
+    {
+      "label": "Insolvenční správci",
+      "link": null
+    },
+    {
+      "label": "Znalecké ústavy",
+      "link": "http://www.equita.cz/"
+    }
   ],
   "page_homepage_ourServicesHeading": "Naše služby",
   "page_homepage_redBlocks": [
@@ -42,28 +60,15 @@
     "welcomeHeading": "Restrukturalizace",
     "blocks": [
       {
-        "heading":"Substituční interim management",
+        "heading":"Restrukturalizace společnosti",
         "items":[
           {
-            "subHeading":"Pro koho to je určeno: ",
-            "description":"firma, jíž dočasně chybí finanční nebo&nbsp;výkonný ředitel"
+            "subHeading":"Pro koho je určeno:",
+            "description":"věřitelé nebo&nbsp;vlastníci společnosti, která je&nbsp;schopna vydělat na&nbsp;udržení provozu ale&nbsp;nedokáže plnit své&nbsp;finanční&nbsp;závazky"
           },
           {
-            "subHeading":"Cíl: ",
-            "description":"zajistit běžný chod firmy, dokud nebude nalezen a&nbsp;nenastoupí nový manažer"
-          }
-        ]
-      },
-      {
-        "heading":"Postakviziční transformace",
-        "items":[
-          {
-            "subHeading":"Pro koho to je určeno: ",
-            "description":"investor, který po&nbsp;akvizici nemá vhodného manažera a&nbsp;potřebuje zavést korporátní pravidla"
-          },
-          {
-            "subHeading":"Cíl: ",
-            "description":"překlenout dobu do&nbsp;nástupu stabilního manažerského týmu, připravit firmu na&nbsp;řízení najatými manažery tak, aby&nbsp;vlastník nemusel řešit běžnou operativu"
+            "subHeading":"Cíl:",
+            "description":"ve spolupráci s&nbsp;odbornými partnery ozdravit bilanci firmy tak, aby se&nbsp;mohla rozvíjet"
           }
         ]
       },
@@ -100,7 +105,7 @@
     "welcomeHeading": "Akviziční poradenství",
     "blocks": [
       {
-        "heading":"M/A asistence",
+        "heading":"M&A asistence",
         "items":[
           {
             "subHeading":"Pro koho je určeno:",
@@ -113,15 +118,15 @@
         ]
       },
       {
-        "heading":"Restrukturalizace společnosti",
+        "heading":"Postakviziční transformace",
         "items":[
           {
-            "subHeading":"Pro koho je určeno:",
-            "description":"věřitelé nebo&nbsp;vlastníci společnosti, která je&nbsp;schopna vydělat na&nbsp;udržení provozu ale&nbsp;nedokáže plnit své&nbsp;finanční&nbsp;závazky"
+            "subHeading":"Pro koho to je určeno: ",
+            "description":"investor, který po&nbsp;akvizici nemá vhodného manažera a&nbsp;potřebuje zavést korporátní pravidla"
           },
           {
-            "subHeading":"Cíl:",
-            "description":"ve spolupráci s&nbsp;odbornými partnery ozdravit bilanci firmy tak, aby se&nbsp;mohla rozvíjet"
+            "subHeading":"Cíl: ",
+            "description":"překlenout dobu do&nbsp;nástupu stabilního manažerského týmu, připravit firmu na&nbsp;řízení najatými manažery tak, aby&nbsp;vlastník nemusel řešit běžnou operativu"
           }
         ]
       }
@@ -140,5 +145,6 @@
   "contact_dataMail": "Datová schránka: z2itund",
   "contact_dic": "DIČ: CZ07825820",
   "keyWords": "interim, poradenství, management, společnost, poradci, restrukturalizace, postakvizice, firma, finance, podnik, asistence, advisory, akvizice, transformace, odborné, Martin, Ježek ",
-  "description": "TURNIMAN Advisory s.r.o. je firma která se zabývá interim managementem a odborným poradenstvím pro firmy a společnosti, které se dostali do jakých koliv potíží. Ať jim schází klíčový manažer nebo potřebují zvládnout akvizice. "
+  "description": "TURNIMAN Advisory s.r.o. je firma která se zabývá interim managementem a odborným poradenstvím pro firmy a společnosti, které se dostali do jakých koliv potíží. Ať jim schází klíčový manažer nebo potřebují zvládnout akvizice. ",
+  "backButton": "Zpět"
 }
