@@ -8,15 +8,13 @@ parameters:
 #    password: Gd!3N95@e
 #    port: 25
 
-
-
 doctrine:
-    user: @App\Model\DbFactory::username
-    password: @App\Model\DbFactory::password
-    dbname: @App\Model\DbFactory::dbname
-    host: @App\Model\DbFactory::host
-    metadata:
-        App: %appDir%
+        user: @App\Model\DbFactory::username
+        password: @App\Model\DbFactory::password
+        dbname: @App\Model\DbFactory::dbname
+        host: @App\Model\DbFactory::host
+        metadata:
+            App: %appDir%
 
 
 extensions:
