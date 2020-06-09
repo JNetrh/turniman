@@ -24,11 +24,6 @@ extensions:
         annotations: Kdyby\Annotations\DI\AnnotationsExtension
         doctrine: Kdyby\Doctrine\DI\OrmExtension
 
-#database:
-#    dsn: 'mysql:host=localhost;dbname=d950521_turniman'
-#    user: jakub
-#    password: 1234
-
 application:
 	errorPresenter: App\FrontModule\Presenters\Error
 	mapping:
@@ -42,21 +37,10 @@ session:
 
 services:
 	# Managers
-#	- App\Model\MyService
-
 	- App\Model\DbFactory
-#	- App\Model\Entities\NewsRepo
-#	- App\Model\Entities\Tag
-#	- App\Model\Entities\User
 	- App\Model\Services\UserService
 	- App\Model\Services\LanguageService
 	- App\Model\Services\MutationService
-#	- App\Model\Services\MenuService
-#	- App\Model\Services\BlockService
-#	- App\Model\Services\JobsService
-#	- App\Model\Services\RequirementService
-#	- App\Model\Services\GaleryService
-#	- App\Model\Services\ImageService
 	authenticator: App\Model\Authenticator
 	authorizatorFactory: App\Model\AuthorizatorFactory
 	authorizator: @authorizatorFactory::create

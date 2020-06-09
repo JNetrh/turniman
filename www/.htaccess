@@ -19,18 +19,19 @@ Allow from all
 
     # redirect http(s)://example.com to https://www.example.com
     RewriteCond %{HTTP_HOST} !^www\. [NC]
-    RewriteRule ^ https://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+#    RewriteRule ^ https://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+    RewriteRule (.*) https://www.%{SERVER_NAME}/$1 [R,L] #toto vyřešilo přesměrování z domain.com/www/ pouze na domain.com
 
-#    # redirect http://www.example.com to https://www.example.com
+    # redirect http://www.example.com to https://www.example.com
     RewriteCond %{HTTPS} off
-    RewriteCond %{HTTP_HOST} ^www\. [NC]
-    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
-
+    RewriteRule (.*) https://%{SERVER_NAME}/$1 [R,L]
 
     # front controller
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule !\.(pdf|js|ico|gif|jpg|png|css|rar|zip|tar\.gz|map)$ index.php [L]
+
+
 </IfModule>
 
 # enable gzip compression
